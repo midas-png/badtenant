@@ -1,0 +1,14 @@
+export const SEARCH_ROUTE = '/search';
+export const ABOUT_ROUTE = '/about';
+export const SIGNIN_ROUTE = '/signin';
+export const SIGNUP_ROUTE = '/signup';
+export const SUBSCRIPTION_ROUTE = '/subscription';
+export const NOTFOUND_ROUTE = '/notfound';
+export const TERMS_ROUTE = '/terms';
+export const PRIVACY_ROUTE = '/privacy';
+export const ADVERTISEMENT_ROUTE = '/advertisement';
+export const CHAT_ROUTE = '/chat';
+export const RESET_EMAIL_ROUTE = '/reset_password_email';
+export const RESET_PASSWORD_ROUTE = '/reset_password';
+export const ACCOUNT_ROUTE = '/account';
+export const MAIN_ROUTE = '/';
