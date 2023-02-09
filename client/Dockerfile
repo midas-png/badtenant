@@ -1,17 +1,13 @@
-FROM node:16-alpine 
+FROM node:16.14-alpine
 
-WORKDIR /app
+WORKDIR /clientapp
 
-COPY . .
+COPY package.json /clientapp
 
-ENV REACT_APP_API_URL=http://localhost:5000/
+RUN npm i
 
-RUN npm i 
+COPY . /clientapp
 
-RUN npm run start
-
-ENV NODE_ENV production
+CMD npm run start
 
 EXPOSE 3000
-
-CMD [ "npx", "serve", "build" ]

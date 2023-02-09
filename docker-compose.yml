@@ -1,33 +1,17 @@
-version: '3.0'
-
+version: '3.9'
 services:
-  main:
-    container_name: main
-    build:
-      context: .
-    env_file:
-      - server/.env
-    volumes:
-      - .:/app
-      - /app/node_modules
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: node-container
     ports:
-      - 5000:5000
-    command: npm run start
-    depends_on:
-      - postgres
-    restart: always
-  postgres:
-    container_name: postgres
-    image: postgres:12
-    env_file:
-      - server/.env
-    environment:
-      PG_DATA: /var/lib/postgresql/data
+      - '5000:5000'
+  client:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: react-container
     ports:
-      - 5432:5432
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    restart: always
-
-volumes:
-  pgdata:
+      - '3000:3000'
+    stdin_open: true
