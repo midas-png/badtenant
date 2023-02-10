@@ -6,7 +6,7 @@ const data = {
       states: [
         {
           name: 'California',
-          cities: ['Los Angeles', 'San Diego', 'Sacramento'], // API Request to get California Cities
+          cities: ['Los Angeles', 'San Diego', 'Sacramento'],
         },
       ],
     },

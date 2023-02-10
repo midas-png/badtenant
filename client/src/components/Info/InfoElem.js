@@ -90,8 +90,10 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  max-width: 555px;
-  height: 100%;
+  svg {
+    max-width: 555px;
+    height: 100%;
+  }
 `;
 
 export const Image = styled.img`

@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Container,
   Title,
   UnderTitle,
   LinkToMain,
-  Image,
+  SvgIconWrapper,
   TextWrapper,
   HeaderWrapper,
   Header,
@@ -13,8 +12,9 @@ import {
   FooterWrapper,
   Footer,
 } from './NotFoundElem';
+import { Assets } from 'assets';
 
-function NotFound({ img, alt }) {
+function NotFound() {
   return (
     <Container>
       <HeaderWrapper>
@@ -28,7 +28,9 @@ function NotFound({ img, alt }) {
           <LinkToMain to="/">Click here</LinkToMain> to move to the main page
         </UnderTitle>
       </TextWrapper>
-      <Image src={img} alt={alt} />
+      <SvgIconWrapper>
+        <Assets.SvgAsset7 />
+      </SvgIconWrapper>
       <FooterWrapper>
         <Footer>
           badTenant &copy; {new Date().getFullYear()} All rights reserved.
@@ -39,8 +41,3 @@ function NotFound({ img, alt }) {
 }
 
 export default NotFound;
-
-NotFound.propTypes = {
-  img: PropTypes.string,
-  alt: PropTypes.string,
-};

@@ -30,7 +30,7 @@ import { IconContext } from 'react-icons/lib';
 import { FaBars } from 'react-icons/fa';
 import { Context } from '../../index';
 import Modal from '../Modal/index';
-import DefaultImage from '../../images/test_image.jpg';
+import { Assets } from 'assets';
 import Cookies from 'js-cookie';
 
 const Navbar = observer(({ setReverse, setStatic }) => {
@@ -138,7 +138,7 @@ const Navbar = observer(({ setReverse, setStatic }) => {
             ) : (
               <AccountWrapper>
                 <AccountImage
-                  src={DefaultImage}
+                  src={Assets.UserNoImage}
                   onClick={() => toggleDropdown()}
                 />
                 {dropdown && (

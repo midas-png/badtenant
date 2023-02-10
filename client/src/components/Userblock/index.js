@@ -14,7 +14,7 @@ import {
 } from './UserblockElem';
 import Rating from './Rating';
 import PropTypes from 'prop-types';
-import DefaultImage from '../../images/test_image.jpg';
+import { Assets } from 'assets';
 import { Context } from '../../index';
 
 function Userblock({
@@ -31,7 +31,7 @@ function Userblock({
   return (
     <UserblockContainer to={`/advertisement/${linkTo}`}>
       <UserblockImageWrapper>
-        <UserblockImage src={!userImage ? DefaultImage : userImage} />
+        <UserblockImage src={!userImage ? Assets.UserNoImage : userImage} />
       </UserblockImageWrapper>
       <UserblockNameWrapper>
         <UserblockName>{userName}</UserblockName>

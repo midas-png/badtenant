@@ -26,6 +26,7 @@ import { resetTokenVerify, resetUserPassword } from 'http/userAPI';
 import useForm from './useForm';
 import validate from './validate';
 import { ToastContainer, toast } from 'react-toastify';
+import { Assets } from 'assets';
 
 const ResetPasswordPhase = () => {
   const { handleChange, values, handleSubmit, error } = useForm(validate);
@@ -72,18 +73,18 @@ const ResetPasswordPhase = () => {
   return (
     <>
       <ToastContainer />
-      { linkError == '' ? (
+      {linkError == '' ? (
         <FormContainer>
           <LogoLink to="/">badTenant</LogoLink>
           <FormContentLeft>
-            <Image src="images/svg-10.svg" />
+            <Assets.SvgAsset5 />
           </FormContentLeft>
           {!submitted ? (
             <ContentRight>
               <Form onSubmit={handleSubmit}>
                 <Title>
-              Get started with us today! Create your account by filling out the
-              form below.
+                  Get started with us today! Create your account by filling out
+                  the form below.
                 </Title>
                 <FormInputs>
                   <FormLabel htmlFor="password">Password</FormLabel>
@@ -98,7 +99,9 @@ const ResetPasswordPhase = () => {
                   {error.password && <ErrorText>{error.password}</ErrorText>}
                 </FormInputs>
                 <FormInputs>
-                  <FormLabel htmlFor="passwordVerify">Verify password</FormLabel>
+                  <FormLabel htmlFor="passwordVerify">
+                    Verify password
+                  </FormLabel>
                   <FormInput
                     id="passwordVerify"
                     type="password"
@@ -107,11 +110,16 @@ const ResetPasswordPhase = () => {
                     value={values.passwordVerify}
                     onChange={handleChange}
                   />
-                  {error.passwordVerify && <ErrorText>{error.passwordVerify}</ErrorText>}
+                  {error.passwordVerify && (
+                    <ErrorText>{error.passwordVerify}</ErrorText>
+                  )}
                 </FormInputs>
                 <FormInputButtonsWrapper>
                   <ButtonWrapper type="submit" onClick={handleReset}>
-                    <Button font='medium' typeDisabled='secondary' disabled={loading}>
+                    <Button
+                      font="medium"
+                      typeDisabled="secondary"
+                      disabled={loading}>
                       Reset Password
                     </Button>
                   </ButtonWrapper>
@@ -125,13 +133,15 @@ const ResetPasswordPhase = () => {
           ) : (
             <SubmittedWrapper>
               <SubmittedContent>
-              Reset link has been sent to your email!
+                Reset link has been sent to your email!
               </SubmittedContent>
-              <SubmittedImage src="images/svg-8.svg" alt="success-image" />
+              <Assets.SvgAsset7 />
             </SubmittedWrapper>
           )}
         </FormContainer>
-      ) : <span>{linkError}</span>}
+      ) : (
+        <span>{linkError}</span>
+      )}
     </>
   );
 };

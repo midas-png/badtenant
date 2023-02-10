@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import FormSignup from './FormSignup';
 import FormSuccess from './FormSuccess';
-import { FormContainer, LogoLink, FormContentLeft, Image } from './indexElem';
+import { Assets } from 'assets';
+import { FormContainer, LogoLink, FormContentLeft } from './indexElem';
 
 function Form() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,7 +18,7 @@ function Form() {
       <FormContainer>
         <LogoLink to="/">badTenant</LogoLink>
         <FormContentLeft>
-          <Image src="images/svg-10.svg" />
+          <Assets.SvgAsset6 />
         </FormContentLeft>
         {isValid ? (
           <FormSuccess />

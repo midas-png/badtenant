@@ -19,7 +19,7 @@ import { Context } from '../../../../index';
 import { observer } from 'mobx-react-lite';
 import { getAdvertisement } from '../../../../http/advertisementAPI';
 import RatingBlock from './RatingBlock/index';
-import DefaultImage from '../../../../images/test_image.jpg';
+import { Assets } from 'assets';
 import { Temporal } from '@js-temporal/polyfill';
 
 const AccountDeals = observer(() => {
@@ -134,7 +134,7 @@ const AccountDeals = observer(() => {
                     {user.user.role === 'TENANT' ? (
                       <>
                         <InfoImage
-                          src={deal.img === '' ? DefaultImage : deal.img}
+                          src={deal.img === '' ? Assets.UserNoImage : deal.img}
                         />
                         <ContactWrapper>
                           <InfoName to={`/advertisement/${deal.id_landlord}`}>
@@ -165,7 +165,7 @@ const AccountDeals = observer(() => {
                     ) : (
                       <>
                         <InfoImage
-                          src={deal.img === '' ? DefaultImage : deal.img}
+                          src={deal.img === '' ? Assets.UserNoImage : deal.img}
                         />
                         <ContactWrapper>
                           <InfoName to={`/advertisement/${deal.id_tenant}`}>

@@ -4,8 +4,8 @@ import {
   FormContainer,
   LogoLink,
   FormContentLeft,
-  Image,
 } from '../Signup/indexElem';
+import { Assets } from 'assets';
 import FormSignin from './FormSignin';
 import SuccessSignin from './SuccessSignin';
 
@@ -22,7 +22,7 @@ function FormLogin() {
       <FormContainer>
         <LogoLink to="/">badTenant</LogoLink>
         <FormContentLeft>
-          <Image src="images/svg-9.svg" />
+          <Assets.SvgAsset7 />
         </FormContentLeft>
         {isValid ? (
           <SuccessSignin />

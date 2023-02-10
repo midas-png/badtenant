@@ -221,6 +221,15 @@ export const FormContentLeft = styled.div`
     rgb(255, 135, 54) 100%
   );
   position: relative;
+
+  svg {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const Image = styled.img`
@@ -235,6 +244,15 @@ export const Image = styled.img`
 export const SubmittedWrapper = styled.div`
   position: relative;
   background: #010606;
+
+  svg {
+    width: 60%;
+    height: 60%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const SubmittedContent = styled.h1`

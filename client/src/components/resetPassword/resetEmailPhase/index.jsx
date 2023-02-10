@@ -15,10 +15,9 @@ import {
   FormContainer,
   LogoLink,
   FormContentLeft,
-  Image,
   SubmittedWrapper,
   SubmittedContent,
-  SubmittedImage,
+  SubmittedSvgWrapper,
 } from './styles';
 import { sendResetLink } from 'http/userAPI';
 import { Button } from 'ui';
@@ -26,9 +25,11 @@ import useForm from './useForm';
 import validate from './validate';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { Assets } from 'assets';
 
 const FormEmailPhase = () => {
-  const { handleChange, email, handleSubmit, error, setError } = useForm(validate);
+  const { handleChange, email, handleSubmit, error, setError } =
+    useForm(validate);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -59,14 +60,14 @@ const FormEmailPhase = () => {
       <FormContainer>
         <LogoLink to="/">badTenant</LogoLink>
         <FormContentLeft>
-          <Image src="images/svg-10.svg" />
+          <Assets.SvgAsset7 />
         </FormContentLeft>
         {!submitted ? (
           <ContentRight>
             <Form onSubmit={handleSubmit}>
               <Title>
-              Get started with us today! Create your account by filling out the
-              form below.
+                Get started with us today! Create your account by filling out
+                the form below.
               </Title>
               <FormInputs>
                 <FormLabel htmlFor="email">Email</FormLabel>
@@ -82,13 +83,16 @@ const FormEmailPhase = () => {
               </FormInputs>
               <FormInputButtonsWrapper>
                 <FormInputBtnWrapper type="submit" onClick={emailSend}>
-                  <Button font='medium' typeDisabled='secondary' disabled={loading}>
+                  <Button
+                    font="medium"
+                    typeDisabled="secondary"
+                    disabled={loading}>
                     Send Link
                   </Button>
                 </FormInputBtnWrapper>
               </FormInputButtonsWrapper>
               <FormInputLogin>
-              Already have an account? Login by{' '}
+                Already have an account? Login by{' '}
                 <MainLink to="/signin">the link</MainLink>
               </FormInputLogin>
             </Form>
@@ -98,7 +102,7 @@ const FormEmailPhase = () => {
             <SubmittedContent>
               Reset link has been sent to your email!
             </SubmittedContent>
-            <SubmittedImage src="images/svg-8.svg" alt="success-image" />
+            <Assets.SvgAsset5 />
           </SubmittedWrapper>
         )}
       </FormContainer>

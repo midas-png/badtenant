@@ -1,3 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
+import { Assets } from 'assets';
+
 export const homeObject1 = {
   id: 'signup',
   lightBackground: false,
@@ -9,8 +12,7 @@ export const homeObject1 = {
     'Get access to our service by registering in one click to left a review about your tenant without getting charged any fees.',
   buttonLabel: 'Sign Up',
   imageStart: true,
-  img: require('../../images/svg-1.svg').default,
-  alt: 'Rating',
+  icon: <Assets.SvgAsset1 />,
   dark: true,
   primary: true,
   darkText: false,
@@ -28,8 +30,7 @@ export const homeObject2 = {
     'Get access to our service by registering in one click to left a review about your tenant without getting charged any fees.',
   buttonLabel: 'Learn more',
   imageStart: false,
-  img: require('../../images/svg-5.svg').default,
-  alt: 'Rating',
+  icon: <Assets.SvgAsset5 />,
   dark: false,
   primary: false,
   darkText: true,

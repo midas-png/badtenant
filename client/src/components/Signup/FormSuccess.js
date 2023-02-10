@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormContentRight, FormSuccessElement, Image } from './FormSuccessElem';
+import { FormContentRight, FormSuccessElement } from './FormSuccessElem';
+import { Assets } from 'assets';
 
 function FormSuccess() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function FormSuccess() {
         Nice to meet you! Please, check your email address to confirm your
         account.
       </FormSuccessElement>
-      <Image src="images/svg-8.svg" alt="success-image" />
+      <Assets.SvgAsset3 />
     </FormContentRight>
   );
 }

@@ -21,7 +21,7 @@ import { ButtonRequest } from '../../ButtonElem';
 import { Context } from '../../../index';
 import { update } from '../../../http/userAPI';
 import { getAdvertisement } from '../../../http/advertisementAPI';
-import DefaultImage from '../../../images/test_image.jpg';
+import { Assets } from 'assets';
 
 export const activateToast = (type, message) => {
   if (type == 'success') {
@@ -103,7 +103,7 @@ const AccountEditable = () => {
             src={
               userInfo.img
                 ? `${convertBase64(new Blob([userInfo.img]))}`
-                : DefaultImage
+                : Assets.UserNoImage
             }
             alt={'ProfileUser'}
           />

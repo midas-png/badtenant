@@ -5,7 +5,7 @@ import {
   ProfileUserPicture,
   ProfileUserName,
 } from './SidebarUserblockElems';
-import DefaultImage from '../../../../images/test_image.jpg';
+import { Assets } from 'assets';
 
 const SidebarUserblock = ({ id, activeDialoge, handleActiveDialoge }) => {
   return (
@@ -13,7 +13,7 @@ const SidebarUserblock = ({ id, activeDialoge, handleActiveDialoge }) => {
       id={id}
       activeDialoge={activeDialoge}
       onClick={() => handleActiveDialoge(id)}>
-      <ProfileUserPicture src={DefaultImage} />
+      <ProfileUserPicture src={Assets.UserNoImage} />
       <ProfileUserName>John Johnson</ProfileUserName>
     </UserblockWrapper>
   );

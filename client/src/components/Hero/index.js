@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Video from '../../videos/video.mp4';
+import { Assets } from 'assets';
 import {
   Container,
   HeroBackground,
@@ -23,7 +23,7 @@ function Hero() {
   return (
     <Container id="home">
       <HeroBackground>
-        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+        <VideoBg autoPlay loop muted src={Assets.HeroVideo} type="video/mp4" />
       </HeroBackground>
       <Content>
         <H1>Get More from Rating</H1>

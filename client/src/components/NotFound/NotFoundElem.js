@@ -33,7 +33,7 @@ export const LinkToMain = styled(Link)`
   color: #ff6700;
 `;
 
-export const Image = styled.img`
+export const SvgIconWrapper = styled.div`
   height: 500px;
   width: 500px;
   -webkit-user-select: none;

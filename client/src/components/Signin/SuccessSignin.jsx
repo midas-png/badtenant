@@ -16,7 +16,7 @@ function SuccessSignin() {
       <FormSuccessWrapper>
         Welcome back! Glad to see you again
       </FormSuccessWrapper>
-      <Image src="images/svg-8.svg" alt="success-image" />
+      <Image src="assets/svg-8.svg" alt="success-image" />
     </RightContentWrapper>
   );
 }

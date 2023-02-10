@@ -30,13 +30,13 @@ export const FormContentLeft = styled.div`
     rgb(255, 135, 54) 100%
   );
   position: relative;
-`;
 
-export const Image = styled.img`
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  svg {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;

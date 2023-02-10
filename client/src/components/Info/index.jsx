@@ -13,7 +13,6 @@ import {
   Subtitle,
   ButtonWrapper,
   ImageWrapper,
-  Image,
 } from './InfoElem';
 
 function Info({
@@ -26,8 +25,7 @@ function Info({
   darkText,
   description,
   buttonLabel,
-  img,
-  alt,
+  icon,
   primary,
   dark,
   dark2,
@@ -60,7 +58,7 @@ function Info({
           </InfoColumn1>
           <InfoColumn2>
             <ImageWrapper>
-              <Image src={img} alt={alt} />
+              {icon}
             </ImageWrapper>
           </InfoColumn2>
         </InfoRow>
@@ -81,8 +79,7 @@ Info.propTypes = {
   darkText: PropTypes.bool,
   description: PropTypes.string,
   buttonLabel: PropTypes.string,
-  img: PropTypes.string,
-  alt: PropTypes.string,
+  icon: PropTypes.any,
   primary: PropTypes.bool,
   dark: PropTypes.bool,
   dark2: PropTypes.bool,
