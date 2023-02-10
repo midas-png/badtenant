@@ -13,7 +13,7 @@ import {
   Subtitle,
   ButtonWrapper,
   ImageWrapper,
-} from './InfoElem';
+} from './styles';
 
 function Info({
   lightBackground,
