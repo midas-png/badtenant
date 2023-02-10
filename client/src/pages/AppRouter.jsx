@@ -4,7 +4,6 @@ import {
   Advertisement,
   Chat,
   Home,
-  NotFound,
   Privacy,
   ResetEmail,
   ResetPassword,

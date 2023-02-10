@@ -19,4 +19,4 @@ export const Search = () => {
       <Footer />
     </>
   );
-}
+};
