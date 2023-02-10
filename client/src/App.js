@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
-import AppRouter from './components/AppRouter';
+import AppRouter from 'pages/AppRouter';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Preloader from './components/Preloader';
 import { Context } from './index';

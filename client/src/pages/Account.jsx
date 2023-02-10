@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer/index';
@@ -20,7 +20,7 @@ const ProfileWrapper = styled.div`
   min-height: 1000px;
 `;
 
-const Account = observer(() => {
+export const Account = observer(() => {
   const [isOpen, setOpen] = useState(false);
   const { id } = useParams();
   const { user } = useContext(Context);
@@ -41,5 +41,3 @@ const Account = observer(() => {
     </>
   );
 });
-
-export default Account;

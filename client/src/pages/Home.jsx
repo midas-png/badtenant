@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
+import Hero from '../components/Hero';
+import Info from '../components/Info';
 import Footer from '../components/Footer/index';
-import SubscriptionSection from '../components/SubscriptionSection/index';
-import { observer } from 'mobx-react-lite';
+import Options from '../components/Options/index';
+import { homeObject1, homeObject2 } from '../components/Info/Data';
 
-const Subscription = observer(() => {
+export const Home = () => {
   const [isOpen, setOpen] = useState(false);
 
   const setReverse = () => {
@@ -14,12 +16,13 @@ const Subscription = observer(() => {
 
   return (
     <>
-      <Navbar setReverse={setReverse} setStatic={true} />
       <Sidebar isOpen={isOpen} setReverse={setReverse} />
-      <SubscriptionSection />
+      <Navbar setReverse={setReverse} />
+      <Hero />
+      <Info {...homeObject1} />
+      <Options />
+      <Info {...homeObject2} />
       <Footer />
     </>
   );
-});
-
-export default Subscription;
+}

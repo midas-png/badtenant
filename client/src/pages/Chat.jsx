@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer/index';
@@ -15,7 +15,7 @@ const ProfileWrapper = styled.div`
   min-height: 700px;
 `;
 
-const Chat = () => {
+export const Chat = () => {
   const [isOpen, setOpen] = useState(false);
 
   const setReverse = () => {
@@ -33,5 +33,3 @@ const Chat = () => {
     </>
   );
 };
-
-export default Chat;

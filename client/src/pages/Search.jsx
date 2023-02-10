@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import Hero from '../components/Hero';
-import Info from '../components/Info';
 import Footer from '../components/Footer/index';
-import Options from '../components/Options/index';
-import { homeObject1, homeObject2 } from '../components/Info/Data';
+import SearchComponent from '../components/Search';
 
-function Home() {
+export const Search = () => {
   const [isOpen, setOpen] = useState(false);
 
   const setReverse = () => {
@@ -16,15 +13,10 @@ function Home() {
 
   return (
     <>
+      <Navbar setReverse={setReverse} setStatic={true} />
       <Sidebar isOpen={isOpen} setReverse={setReverse} />
-      <Navbar setReverse={setReverse} />
-      <Hero />
-      <Info {...homeObject1} />
-      <Options />
-      <Info {...homeObject2} />
+      <SearchComponent />
       <Footer />
     </>
   );
 }
-
-export default Home;

@@ -1,8 +1,6 @@
 import React from 'react';
 import ResetPasswordPhase from 'components/resetPassword/resetPasswordPhase';
 
-const ResetPassword = () => {
+export const ResetPassword = () => {
   return <ResetPasswordPhase />;
 };
-
-export default ResetPassword;

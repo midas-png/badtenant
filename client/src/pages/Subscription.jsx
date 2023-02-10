@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer/index';
-import SearchComponent from '../components/Search';
+import SubscriptionSection from '../components/SubscriptionSection/index';
+import { observer } from 'mobx-react-lite';
 
-function Search() {
+export const Subscription = observer(() => {
   const [isOpen, setOpen] = useState(false);
 
   const setReverse = () => {
@@ -15,10 +16,8 @@ function Search() {
     <>
       <Navbar setReverse={setReverse} setStatic={true} />
       <Sidebar isOpen={isOpen} setReverse={setReverse} />
-      <SearchComponent />
+      <SubscriptionSection />
       <Footer />
     </>
   );
-}
-
-export default Search;
+});

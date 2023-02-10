@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 import Notebook from '../components/Notebook';
 import Footer from '../components/Footer';
 
-function Terms() {
+export const Terms = () => {
   const [isOpen, setOpen] = useState(false);
 
   const setReverse = () => {
@@ -31,5 +31,3 @@ function Terms() {
     </>
   );
 }
-
-export default Terms;
