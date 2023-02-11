@@ -15,7 +15,7 @@ import {
   FilterButton,
   RadioButtonsWrapper,
 } from './styles';
-import Userblock from '../Userblock';
+import { Userblock } from 'components';
 import { ToastContainer, toast } from 'react-toastify';
 import Slider from '@mui/material/Slider';
 import { Context } from '../..';

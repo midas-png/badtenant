@@ -1,23 +1,10 @@
-import React, { useContext } from 'react';
-import {
-  UserblockContainer,
-  UserblockName,
-  UserblockImage,
-  UserblockImageWrapper,
-  UserblockSpan,
-  UserblockNameWrapper,
-  UserblockHR,
-  UserblockDataWrapper,
-  FunctionsLink,
-  RatingIsNotAuth,
-  RatingTextWrapper,
-} from './styles';
-import Rating from './rating';
+import { UserblockWrapper, UserblockDivideLine } from './styles';
+import { UserblockHead } from './head';
+import { UserblockData } from './data';
+import { UserblockRating } from './rating';
 import PropTypes from 'prop-types';
-import { Assets } from 'assets';
-import { Context } from '../../index';
 
-function Userblock({
+export const Userblock = ({
   linkTo,
   userName,
   userLocation,
@@ -25,41 +12,20 @@ function Userblock({
   userImage,
   totalComments,
   registrationDate,
-}) {
-  const { user } = useContext(Context);
-
+}) => {
   return (
-    <UserblockContainer to={`/advertisement/${linkTo}`}>
-      <UserblockImageWrapper>
-        <UserblockImage src={!userImage ? Assets.UserNoImage : userImage} />
-      </UserblockImageWrapper>
-      <UserblockNameWrapper>
-        <UserblockName>{userName}</UserblockName>
-      </UserblockNameWrapper>
-      <UserblockHR />
-      <UserblockDataWrapper>
-        <UserblockSpan>{userLocation}</UserblockSpan>
-        <UserblockSpan>Registration Date: {registrationDate}</UserblockSpan>
-        <UserblockSpan>Total Comments: {totalComments}</UserblockSpan>
-      </UserblockDataWrapper>
-      {user.isAuth ? (
-        <RatingTextWrapper>
-          <Rating rate={userRate} scale={55} />
-        </RatingTextWrapper>
-      ) : (
-        <RatingTextWrapper>
-          <RatingIsNotAuth>
-            You are not authorized.
-            <br />
-            <FunctionsLink> Click here</FunctionsLink> to signin
-          </RatingIsNotAuth>
-        </RatingTextWrapper>
-      )}
-    </UserblockContainer>
+    <UserblockWrapper to={`/advertisement/${linkTo}`}>
+      <UserblockHead userName={userName} userImage={userImage} />
+      <UserblockDivideLine />
+      <UserblockData
+        userLocation={userLocation}
+        totalComments={totalComments}
+        registrationDate={registrationDate}
+      />
+      <UserblockRating userRate={userRate} />
+    </UserblockWrapper>
   );
-}
-
-export default Userblock;
+};
 
 Userblock.propTypes = {
   linkTo: PropTypes.number.isRequired,

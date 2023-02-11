@@ -11,13 +11,13 @@ import {
   MainLink,
   FormInputLogin,
   LoaderIcon,
-} from '../Signup/formSignup/styles';
+} from '../../Signup/formSignup/styles';
 import { Button } from 'ui';
 import PropTypes from 'prop-types';
-import useForm from './useForm';
-import validate from './validateInfo';
-import { signin } from '../../http/userAPI';
-import { Context } from '../../index';
+import useForm from '../useForm';
+import validate from '../validateInfo';
+import { signin } from '../../../http/userAPI';
+import { Context } from '../../../index';
 
 function FormSignin({ submitForm, setIsValid }) {
   const [errorServerResponse, setErrorServerResponse] = useState('');

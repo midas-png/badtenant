@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import FormSignup from './formSignup/FormSignup';
-import FormSuccess from './formSuccess/FormSuccess';
+import FormSignup from './formSignup';
+import FormSuccess from './formSuccess';
 import { Assets } from 'assets';
 import { FormContainer, LogoLink, FormContentLeft } from './styles';
 

@@ -1,63 +1,31 @@
-import React from 'react';
-import { RatingContainer, StarFill, StarHalf, StarEmpty } from '../styles';
+import { useContext } from 'react';
+import { FunctionsLink, RatingIsNotAuth, RatingTextWrapper } from './styles';
 import PropTypes from 'prop-types';
+import { Rating } from 'ui';
+import { Context } from 'index';
 
-let index = 0;
+export const UserblockRating = ({ userRate }) => {
+  const { user } = useContext(Context);
 
-const toggleIndex = () => {
-  index++;
-  return index;
-};
-
-const getStar = (rate, scale) => {
-  switch (rate) {
-  case 0:
-    return <StarEmpty key={toggleIndex()} scale={scale} />;
-  case 50:
-    return <StarHalf key={toggleIndex()} scale={scale} />;
-  case 100:
-    return <StarFill key={toggleIndex()} scale={scale} />;
-  }
-};
-
-const getStars = (rate) => {
-  switch (parseFloat(rate)) {
-  case 0.0:
-    return [0, 0, 0, 0, 0];
-  case 0.5:
-    return [50, 0, 0, 0, 0];
-  case 1.0:
-    return [100, 0, 0, 0, 0];
-  case 1.5:
-    return [100, 50, 0, 0, 0];
-  case 2.0:
-    return [100, 100, 0, 0, 0];
-  case 2.5:
-    return [100, 100, 50, 0, 0];
-  case 3.0:
-    return [100, 100, 100, 0, 0];
-  case 3.5:
-    return [100, 100, 100, 50, 0];
-  case 4.0:
-    return [100, 100, 100, 100, 0];
-  case 4.5:
-    return [100, 100, 100, 100, 50];
-  case 5.0:
-    return [100, 100, 100, 100, 100];
-  }
-};
-
-const Rating = ({ rate, scale }) => {
   return (
-    <RatingContainer>
-      {getStars(rate).map((rate) => getStar(rate, scale))}
-    </RatingContainer>
+    <>
+      {user.isAuth ? (
+        <RatingTextWrapper>
+          <Rating rate={userRate} scale={55} />
+        </RatingTextWrapper>
+      ) : (
+        <RatingTextWrapper>
+          <RatingIsNotAuth>
+            You are not authorized.
+            <br />
+            <FunctionsLink> Click here</FunctionsLink> to signin
+          </RatingIsNotAuth>
+        </RatingTextWrapper>
+      )}
+    </>
   );
 };
 
-export default Rating;
-
-Rating.propTypes = {
-  rate: PropTypes.number.isRequired,
-  scale: PropTypes.any,
+UserblockRating.propTypes = {
+  userRate: PropTypes.number.isRequired,
 };

@@ -42,7 +42,7 @@ import { Context } from '../../index';
 import { animateScroll as scroll } from 'react-scroll';
 import { getAdvertisement } from '../../http/advertisementAPI';
 import { Link } from 'react-router-dom';
-import Rating from '../Userblock/rating';
+import { Rating } from 'ui';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 import { styled } from '@mui/material/styles';

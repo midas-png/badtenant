@@ -1,3 +1,4 @@
-export { RadioButton } from 'ui/radio/index';
-export { TariffsCard } from 'ui/tariffsCard/index';
-export { Button } from 'ui/button/index';
+export { RadioButton } from './radio';
+export { TariffsCard } from './tariffsCard';
+export { Button } from './button';
+export { Rating } from './rating';

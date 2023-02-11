@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { FormContainer, LogoLink, FormContentLeft } from '../Signup/styles';
 import { Assets } from 'assets';
-import FormSignin from './FormSignin';
-import SuccessSignin from './SuccessSignin';
+import FormSignin from './formSignin';
+import SuccessSignin from './formSuccess';
 
 function FormLogin() {
   const [isSubmitted, setIsSubmitted] = useState(false);

@@ -9,7 +9,7 @@ import {
   Button,
   SearchWrapper,
   SearchBar,
-} from './styles.jsx';
+} from './styles';
 
 function Home() {
   return (
