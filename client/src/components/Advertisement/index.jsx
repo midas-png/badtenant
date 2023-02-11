@@ -34,9 +34,9 @@ import {
   WarningText,
 } from './modalStyles';
 import Modal from '../Modal/index';
-import Navbar from '../Navbar';
-import Sidebar from '../Sidebar';
-import Footer from '../Footer';
+import { Navbar } from '../../layout/Navbar';
+import { Sidebar } from '../../layout/Sidebar';
+import { Footer } from '../../layout/Footer';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Context } from '../../index';
 import { animateScroll as scroll } from 'react-scroll';

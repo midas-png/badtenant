@@ -14,7 +14,7 @@ import {
 import { Context } from '../../index';
 import Cookies from 'js-cookie';
 
-const Sidebar = ({ isOpen, setReverse }) => {
+export const Sidebar = ({ isOpen, setReverse }) => {
   const { user } = useContext(Context);
 
   const logOut = () => {
@@ -74,8 +74,6 @@ const Sidebar = ({ isOpen, setReverse }) => {
     </Container>
   );
 };
-
-export default Sidebar;
 
 Sidebar.propTypes = {
   isOpen: PropTypes.bool,

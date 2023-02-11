@@ -23,17 +23,17 @@ import {
   ModalParagraph,
   ButtonsWrapper,
   ModalButton,
-} from '../ModalNavbarElem';
+} from '../../components/ModalNavbarElem';
 import { animateScroll as scroll } from 'react-scroll';
 import { observer } from 'mobx-react-lite';
 import { IconContext } from 'react-icons/lib';
 import { FaBars } from 'react-icons/fa';
 import { Context } from '../../index';
-import Modal from '../Modal/index';
+import Modal from '../../components/Modal/index';
 import { Assets } from 'assets';
 import Cookies from 'js-cookie';
 
-const Navbar = observer(({ setReverse, setStatic }) => {
+export const Navbar = observer(({ setReverse, setStatic }) => {
   const [scollNav, setScrollNav] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [modalActive, setModalActive] = useState(false);
@@ -185,5 +185,3 @@ const Navbar = observer(({ setReverse, setStatic }) => {
     </>
   );
 });
-
-export default Navbar;

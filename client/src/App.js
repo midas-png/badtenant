@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
-import AppRouter from 'pages/AppRouter';
+// import { AppRouter } from 'pages';
+import { Layout } from 'layout';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Preloader from './components/Preloader';
 import { Context } from './index';
@@ -60,7 +61,7 @@ const App = observer(() => {
   return (
     <Router>
       <Theme>
-        <AppRouter />
+        <Layout />
         {modalActive ? (
           <Modal active={modalActive} setActive={setModalActive}>
             <AppModal

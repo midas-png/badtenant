@@ -24,7 +24,7 @@ import {
   FooterA,
 } from './styles';
 
-function Footer() {
+export const Footer = () => {
   const bringToHome = () => {
     scroll.scrollToTop();
   };
@@ -115,6 +115,4 @@ function Footer() {
       </Wrapper>
     </Container>
   );
-}
-
-export default Footer;
+};

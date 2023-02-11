@@ -31,7 +31,7 @@ import {
 import { Routes, Route } from 'react-router-dom';
 import { AuthRoute, UnauthRoute } from 'components/protectedRoute';
 
-const AppRouter = () => {
+export const AppRouter = () => {
   return (
     <Routes>
       <Route element={<AuthRoute />}>
@@ -57,5 +57,3 @@ const AppRouter = () => {
     </Routes>
   );
 };
-
-export default AppRouter;

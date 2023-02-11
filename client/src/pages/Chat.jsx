@@ -1,7 +1,3 @@
-import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer/index';
 import styled from 'styled-components';
 import ChatComponent from '../components/Chat/index';
 
@@ -16,20 +12,9 @@ const ProfileWrapper = styled.div`
 `;
 
 export const Chat = () => {
-  const [isOpen, setOpen] = useState(false);
-
-  const setReverse = () => {
-    setOpen(!isOpen);
-  };
-
   return (
-    <>
-      <Sidebar isOpen={isOpen} setReverse={setReverse} />
-      <Navbar setReverse={setReverse} setStatic={true} />
-      <ProfileWrapper>
-        <ChatComponent />
-      </ProfileWrapper>
-      <Footer />
-    </>
+    <ProfileWrapper>
+      <ChatComponent />
+    </ProfileWrapper>
   );
 };

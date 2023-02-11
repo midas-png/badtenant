@@ -12,3 +12,4 @@ export { Signin } from './Signin';
 export { Signup } from './Signup';
 export { Subscription } from './Subscription';
 export { Terms } from './Terms';
+export { AppRouter } from './AppRouter';
