@@ -25,7 +25,7 @@ export const Layout = () => {
       <Navbar setReverse={toggleSidebarOpen} setStatic={pathname !== '/'} />
       <Sidebar isOpen={sidebarOpen} setReverse={toggleSidebarOpen} />
       <AppRouter />
-      <Footer />
+      {pathname !== '/signin' && pathname !== '/signup' && <Footer />}
     </LayoutWrapper>
   );
 };
