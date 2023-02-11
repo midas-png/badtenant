@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useToggle } from 'domain/hooks';
 import { useLocation } from 'react-router-dom';
 import { LayoutWrapper } from './styles';
 import { Navbar } from './Navbar';
@@ -7,12 +8,8 @@ import { Footer } from './Footer';
 import { AppRouter } from 'pages';
 
 export const Layout = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, toggleSidebarOpen] = useToggle();
   const { pathname } = useLocation();
-
-  const toggleSidebarOpen = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
 
   useEffect(() => {
     if (window.scrollY > 80) {
