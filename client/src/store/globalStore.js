@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-export default class GlobalState {
+export default class GlobalStore {
   constructor() {
     this._isAuth = false;
     this._language = 'en';
