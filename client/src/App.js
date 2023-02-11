@@ -1,6 +1,5 @@
-import './App.css';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
-// import { AppRouter } from 'pages';
+import { GlobalStyle } from 'globalStyles';
 import { Layout } from 'layout';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Preloader from './components/Preloader';
@@ -54,24 +53,25 @@ const App = observer(() => {
     }
   }, [agreementCount]);
 
-  if (loading) {
-    return <Preloader />;
-  }
-
   return (
-    <Router>
-      <Theme>
-        <Layout />
-        {modalActive ? (
-          <Modal active={modalActive} setActive={setModalActive}>
-            <AppModal
-              agreementCount={agreementCount}
-              setActive={setModalActive}
-            />
-          </Modal>
-        ) : null}
-      </Theme>
-    </Router>
+    <Theme>
+      <GlobalStyle />
+      {loading ? (
+        <Preloader />
+      ) : (
+        <Router>
+          <Layout />
+          {modalActive ? (
+            <Modal active={modalActive} setActive={setModalActive}>
+              <AppModal
+                agreementCount={agreementCount}
+                setActive={setModalActive}
+              />
+            </Modal>
+          ) : null}
+        </Router>
+      )}
+    </Theme>
   );
 });
 
