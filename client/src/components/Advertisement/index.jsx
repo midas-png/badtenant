@@ -33,21 +33,18 @@ import {
   WarningIcon,
   WarningText,
 } from './modalStyles';
-import Modal from '../Modal/index';
-import { Navbar } from '../../layout/Navbar';
-import { Sidebar } from '../../layout/Sidebar';
-import { Footer } from '../../layout/Footer';
+import { Modal } from 'ui';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Context } from '../../index';
+import { Context } from 'index';
 import { animateScroll as scroll } from 'react-scroll';
-import { getAdvertisement } from '../../http/advertisementAPI';
+import { getAdvertisement } from 'http/advertisementAPI';
 import { Link } from 'react-router-dom';
 import { Rating } from 'ui';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 import { styled } from '@mui/material/styles';
 import { Temporal } from '@js-temporal/polyfill';
-import { createOffer } from '../../http/offersAPI';
+import { createOffer } from 'http/offersAPI';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -74,7 +71,6 @@ const AdvertisementComponent = () => {
   const { user } = useContext(Context);
   const commentCounter = 0;
   const navigate = useNavigate();
-  const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
     const indexOfLastComment = currentPage * commentsPerPage;
@@ -132,10 +128,6 @@ const AdvertisementComponent = () => {
     }
   };
 
-  const setReverse = () => {
-    setOpen(!isOpen);
-  };
-
   const bringToHome = () => {
     scroll.scrollToTop();
   };
@@ -173,8 +165,6 @@ const AdvertisementComponent = () => {
 
   return (
     <>
-      <Sidebar isOpen={isOpen} setReverse={setReverse} />
-      <Navbar setReverse={setReverse} setStatic={true} />
       <ToastContainer />
       <AdvertisementWrapper>
         <AdvertisementImage />
@@ -304,7 +294,6 @@ const AdvertisementComponent = () => {
           />
         ) : null}
       </AdvertisementWrapper>
-      <Footer />
     </>
   );
 };

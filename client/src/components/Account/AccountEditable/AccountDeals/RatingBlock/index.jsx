@@ -2,14 +2,10 @@ import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import PropTypes from 'prop-types';
-import {
-  RatingBlockWrapper,
-  ButtonsWrapper,
-  RatingButton,
-} from './styles';
+import { RatingBlockWrapper, ButtonsWrapper, RatingButton } from './styles';
 import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import Modal from '../../../../Modal/index';
+import { Modal } from 'ui';
 import RatingModal from './RatingModal/index';
 import ReportModal from './ReportModal/index';
 

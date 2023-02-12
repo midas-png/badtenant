@@ -6,7 +6,7 @@ import { Preloader } from 'components';
 import { Context } from './index';
 import { Theme } from 'domain/theme';
 import { check } from './http/userAPI';
-import Modal from './components/Modal/index';
+import { Modal } from 'ui';
 import { observer } from 'mobx-react-lite';
 import { getDealRelevance, getTenantDeals } from './http/agreementAPI';
 import AppModal from './components/AppModal';

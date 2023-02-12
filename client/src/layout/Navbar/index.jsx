@@ -29,7 +29,7 @@ import { observer } from 'mobx-react-lite';
 import { IconContext } from 'react-icons/lib';
 import { FaBars } from 'react-icons/fa';
 import { Context } from '../../index';
-import Modal from '../../components/Modal/index';
+import { Modal } from 'ui';
 import { Assets } from 'assets';
 import Cookies from 'js-cookie';
 
