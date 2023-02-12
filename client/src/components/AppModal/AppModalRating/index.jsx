@@ -1,4 +1,3 @@
-import React from 'react';
 import { AppModalRatingWrapper, EmptyStar } from './styles';
 
 const AppModalRating = () => {

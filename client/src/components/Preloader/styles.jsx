@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const PreloaderWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -43,7 +43,7 @@ export const StyledSpinner = styled.svg`
   }
 `;
 
-export const UnderLoader = styled.div`
+export const LogoWrapper = styled.div`
   cursor: default;
   color: #fff;
   font-size: 2rem;
@@ -52,6 +52,6 @@ export const UnderLoader = styled.div`
   margin-bottom: 70px;
 `;
 
-export const OrangeContext = styled.span`
+export const OrangeContent = styled.span`
   color: #ff6700;
 `;

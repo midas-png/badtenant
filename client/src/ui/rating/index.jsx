@@ -1,4 +1,3 @@
-import React from 'react';
 import { RatingContainer, StarFill, StarHalf, StarEmpty } from './styles';
 import PropTypes from 'prop-types';
 

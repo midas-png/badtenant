@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useLayoutEffect, useEffect } from 'react';
+import { useState, useLayoutEffect, useEffect } from 'react';
 import {
   ContentRight,
   Form,

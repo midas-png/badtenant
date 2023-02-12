@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
+import { useState, useEffect, useLayoutEffect, useContext } from 'react';
 import { GlobalStyle } from 'globalStyles';
 import { Layout } from 'layout';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Preloader from './components/Preloader';
+import { Preloader } from 'components';
 import { Context } from './index';
 import { Theme } from 'domain/theme';
 import { check } from './http/userAPI';

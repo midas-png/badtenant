@@ -1,4 +1,3 @@
-import React from 'react';
 import SubscriptionSection from '../components/SubscriptionSection/index';
 import { observer } from 'mobx-react-lite';
 

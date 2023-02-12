@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FormContainer, LogoLink, FormContentLeft } from '../Signup/styles';
 import { Assets } from 'assets';
 import FormSignin from './formSignin';

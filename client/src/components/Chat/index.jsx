@@ -1,4 +1,3 @@
-import React from 'react';
 import ChatSidebar from './ChatSidebar';
 import { ChatMessanger } from './ChatMessanger';
 

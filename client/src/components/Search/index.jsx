@@ -1,4 +1,4 @@
-import React, { useState, useContext, useLayoutEffect, useEffect } from 'react';
+import { useState, useContext, useLayoutEffect, useEffect } from 'react';
 import {
   SearchWrapper,
   SearchLeftWrapper,

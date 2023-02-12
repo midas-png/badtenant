@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import PropTypes from 'prop-types';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';

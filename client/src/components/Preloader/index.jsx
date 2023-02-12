@@ -1,17 +1,16 @@
-import React from 'react';
 import {
+  PreloaderWrapper,
   StyledSpinner,
-  Container,
-  UnderLoader,
-  OrangeContext,
+  LogoWrapper,
+  OrangeContent,
 } from './styles';
 
-function Preloader() {
+export const Preloader = () => {
   return (
-    <Container>
-      <UnderLoader>
-        bad<OrangeContext>Tenant</OrangeContext>
-      </UnderLoader>
+    <PreloaderWrapper>
+      <LogoWrapper>
+        bad<OrangeContent>Tenant</OrangeContent>
+      </LogoWrapper>
       <StyledSpinner viewBox="0 0 50 50">
         <circle
           className="path"
@@ -22,8 +21,6 @@ function Preloader() {
           strokeWidth="4"
         />
       </StyledSpinner>
-    </Container>
+    </PreloaderWrapper>
   );
-}
-
-export default Preloader;
+};
