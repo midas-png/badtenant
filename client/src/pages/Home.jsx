@@ -1,6 +1,6 @@
 import Hero from '../components/Hero';
 import Info from '../components/Info';
-import Options from '../components/Options/index';
+import { Options } from 'components';
 import { homeObject1, homeObject2 } from '../components/Info/Data';
 
 export const Home = () => {

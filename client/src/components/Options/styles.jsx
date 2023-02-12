@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ComponentWrapper = styled.div`
   min-height: 800px;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@ export const OptionsCard = styled.div`
   }
 `;
 
-export const H1 = styled.h1`
+export const ComponentTitle = styled.h1`
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 64px;
@@ -69,12 +69,12 @@ export const H1 = styled.h1`
   }
 `;
 
-export const H2 = styled.h2`
+export const CardTitle = styled.h2`
   font-size: 1rem;
   margin-bottom: 10px;
 `;
 
-export const P = styled.p`
+export const CardDescription = styled.p`
   font-size: 1rem;
   text-align: center;
 `;

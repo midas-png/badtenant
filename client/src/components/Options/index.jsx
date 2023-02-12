@@ -1,38 +1,24 @@
-import { Assets } from 'assets';
+import { OPTIONS } from './data';
 import {
-  Container,
-  H1,
-  H2,
+  ComponentWrapper,
+  ComponentTitle,
+  CardTitle,
   OptionsWrapper,
-  P,
+  CardDescription,
   OptionsCard,
 } from './styles';
 
-function Options() {
-  return (
-    <Container id="options">
-      <H1>Our Options</H1>
-      <OptionsWrapper>
-        <OptionsCard>
-          <Assets.SvgAsset1 />
-          <H2>Check Your Tenant</H2>
-          <P>
-            We help people to be thruthful and get a bit more about each other.
-          </P>
+export const Options = () => (
+  <ComponentWrapper id="options">
+    <ComponentTitle>Our Options</ComponentTitle>
+    <OptionsWrapper>
+      {OPTIONS.map(({ title, description, icon }) => (
+        <OptionsCard key={Math.random()}>
+          {icon}
+          <CardTitle>{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
         </OptionsCard>
-        <OptionsCard>
-          <Assets.SvgAsset2 />
-          <H2>Check Your Landlord</H2>
-          <P>We help people not to get in trouble while renting.</P>
-        </OptionsCard>
-        <OptionsCard>
-          <Assets.SvgAsset3 />
-          <H2>Safety first</H2>
-          <P>Find the best mate for you now. It&apos;s free and safety.</P>
-        </OptionsCard>
-      </OptionsWrapper>
-    </Container>
-  );
-}
-
-export default Options;
+      ))}
+    </OptionsWrapper>
+  </ComponentWrapper>
+);
