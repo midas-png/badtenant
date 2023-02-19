@@ -75,7 +75,7 @@ Project Link: [https://github.com/midas-png/badtenant](https://github.com/midas-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: assets/README_main.png
+[product-screenshot]: assets/README_hero.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [MobX]: https://img.shields.io/badge/MobX-orange?style=for-the-badge&logo=mobx&logoColor=white
