@@ -42,14 +42,14 @@ jobs:
             mkdir env
             cd env
             echo PORT=${{ secrets.PORT }} > production.env
-            echo DB_URL=${{ secrets.DB_URL }} > production.env
-            echo CLIENT_URL=${{ secrets.CLIENT_URL }} > production.env
-            echo SECRET_KEY=${{ secrets.SECRET_KEY }} > production.env
-            echo REGISTER_EMAIL_SERVICE=${{ secrets.REGISTER_EMAIL_SERVICE }} > production.env
-            echo REGISTER_EMAIL_LOGIN=${{ secrets.REGISTER_EMAIL_LOGIN }} > production.env
-            echo REGISTER_EMAIL_PASSWORD=${{ secrets.REGISTER_EMAIL_PASSWORD }} > production.env
-            echo EMAIL_SECRET=${{ secrets.EMAIL_SECRET }} > production.env
-            echo NODE_ENV=${{ secrets.NODE_ENV }} > production.env
+            echo DB_URL=${{ secrets.DB_URL }} >> production.env
+            echo CLIENT_URL=${{ secrets.CLIENT_URL }} >> production.env
+            echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> production.env
+            echo REGISTER_EMAIL_SERVICE=${{ secrets.REGISTER_EMAIL_SERVICE }} >> production.env
+            echo REGISTER_EMAIL_LOGIN=${{ secrets.REGISTER_EMAIL_LOGIN }} >> production.env
+            echo REGISTER_EMAIL_PASSWORD=${{ secrets.REGISTER_EMAIL_PASSWORD }} >> production.env
+            echo EMAIL_SECRET=${{ secrets.EMAIL_SECRET }} >> production.env
+            echo NODE_ENV=${{ secrets.NODE_ENV }} >> production.env
             cd ../..
             docker-compose down
             docker-compose up --build
