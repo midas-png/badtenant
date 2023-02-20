@@ -1,8 +1,8 @@
 FROM node:16.14-alpine as build
-WORKDIR /clientapp
-COPY package.json /clientapp
+WORKDIR /client
+COPY package.json /client
 RUN npm i
-COPY . /clientapp
+COPY . /client
 CMD npm run build
 
 FROM nginx:alpine
