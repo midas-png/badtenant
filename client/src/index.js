@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import GlobalStore from './store/globalStore';
-import AdvertisementStore from './store/advertisementStore';
+import AdvertisementStore from './store/AdvertisementStore';
 require('dotenv').config();
 
 export const Context = createContext(null);
