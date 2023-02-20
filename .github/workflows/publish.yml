@@ -51,5 +51,8 @@ jobs:
             echo EMAIL_SECRET=${{ secrets.EMAIL_SECRET }} >> production.env
             echo NODE_ENV=${{ secrets.NODE_ENV }} >> production.env
             cd ../..
+            export DOCKER_HOST=${{ secrets.DOCKER_HOST }}
+            docker-compose pull
             docker-compose down
-            docker-compose up --build -d
+            docker-compose up
+            unset DOCKER_HOST
