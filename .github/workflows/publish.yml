@@ -51,6 +51,5 @@ jobs:
             echo EMAIL_SECRET=${{ secrets.EMAIL_SECRET }} >> production.env
             echo NODE_ENV=${{ secrets.NODE_ENV }} >> production.env
             cd ../..
-            rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . ${{ secrets.USER }}@${{ secrets.HOST }}
             docker-compose down
-            docker-compose up --build -d
+            docker-compose up --build
