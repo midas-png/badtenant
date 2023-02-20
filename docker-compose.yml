@@ -4,14 +4,17 @@ services:
     build: 
       context: ./server
       dockerfile: Dockerfile
-    container_name: node-container
     ports:
       - '5000:5000'
+  # client:
+  #   build: 
+  #     context: ./client
+  #     dockerfile: Dockerfile
+  #   container_name: react-container
+  #   ports:
+  #     - '3000:3000'
+  #   stdin_open: true
   client:
-    build: 
-      context: ./client
-      dockerfile: Dockerfile
-    container_name: react-container
+    build: ./client
     ports:
-      - '3000:3000'
-    stdin_open: true
+      - "3000:3000"
