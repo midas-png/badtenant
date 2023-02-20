@@ -1,7 +1,7 @@
 FROM node:16.14-alpine as build
 WORKDIR /client
-COPY package.json /client
-RUN npm i
+COPY package.json .
+RUN npm install
 COPY . /client
 CMD npm run build
 
