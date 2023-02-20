@@ -8,8 +8,6 @@ RUN npm i
 
 COPY . /clientapp
 
-RUN npm run build
-
 RUN npm run start
 
 EXPOSE 3000
