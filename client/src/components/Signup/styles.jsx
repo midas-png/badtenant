@@ -9,6 +9,10 @@ export const FormContainer = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const LogoLink = styled(Link)`
@@ -38,5 +42,9 @@ export const FormContentLeft = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
