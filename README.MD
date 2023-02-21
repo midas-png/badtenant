@@ -68,6 +68,7 @@ Project Link: [https://github.com/midas-png/badtenant](https://github.com/midas-
 
 * [Img Shields](https://shields.io)
 * [React Icons](https://react-icons.github.io/react-icons/search)
+* [teinejo](https://github.com/teinejo)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
