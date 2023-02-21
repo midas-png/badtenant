@@ -1,1178 +1,1175 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "version": "1.0.0",
-    "title": "badTenant REST API",
-    "description": ""
-  },
-  "host": "localhost:5000",
-  "basePath": "/api/",
-  "schemes": [
-    "http",
-    "https"
-  ],
-  "paths": {
-    "/user/signup": {
-      "post": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "first_name": {
-                              "example": "any"
-                          },
-                          "last_name": {
-                              "example": "any"
-                          },
-                          "email": {
-                              "example": "any"
-                          },
-                          "password": {
-                              "example": "any"
-                          },
-                          "id_number": {
-                              "example": "any"
-                          },
-                          "location": {
-                              "example": "any"
-                          },
-                          "description": {
-                              "example": "any"
-                          },
-                          "img": {
-                              "example": "any"
-                          },
-                          "role": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "badTenant REST API",
+        "description": ""
     },
-    "/user/signin": {
-      "post": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "email": {
-                              "example": "any"
-                          },
-                          "password": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/auth": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      }
-    },
-    "/user/users": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "limit",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "page",
-                  "in": "query",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/user/{id}": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/users_number": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/user_image/{id}": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/user_rating/{id}": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/filter": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "nameLike",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "limit",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "page",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "searchableRole",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "ratingRange",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "sortType",
-                  "in": "query",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/verify/{id}/{resetToken}": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "resetToken",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {}
-      }
-    },
-    "/user/reset_password/{userId}/{resetToken}": {
-      "get": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "userId",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "resetToken",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "disableRedirect",
-                  "in": "query",
-                  "type": "string"
-              }
-          ],
-          "responses": {}
-      }
-    },
-    "/user/reset_password": {
-      "post": {
-        "tags": ["User"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
+    "host": "217.151.229.239/",
+    "basePath": "/api/",
+    "schemes": ["http"],
+    "paths": {
+        "/user/signup": {
+            "post": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "first_name": {
+                                    "example": "any"
+                                },
+                                "last_name": {
+                                    "example": "any"
+                                },
+                                "email": {
+                                    "example": "any"
+                                },
+                                "password": {
+                                    "example": "any"
+                                },
+                                "id_number": {
+                                    "example": "any"
+                                },
+                                "location": {
+                                    "example": "any"
+                                },
+                                "description": {
+                                    "example": "any"
+                                },
+                                "img": {
+                                    "example": "any"
+                                },
+                                "role": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
                 }
-              }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
+        },
+        "/user/signin": {
+            "post": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "email": {
+                                    "example": "any"
+                                },
+                                "password": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/auth": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/user/users": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/user/{id}": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/users_number": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/user_image/{id}": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/user_rating/{id}": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/filter": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "nameLike",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "searchableRole",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ratingRange",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "sortType",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/verify/{id}/{resetToken}": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "resetToken",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/user/reset_password/{userId}/{resetToken}": {
+            "get": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "resetToken",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "disableRedirect",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/user/reset_password": {
+            "post": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "email": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/reset_user_password": {
+            "post": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "userId": {
+                                    "example": "any"
+                                },
+                                "password": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/update/{id}": {
+            "patch": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/user/update_rating": {
+            "patch": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "to_id": {
+                                    "example": "any"
+                                },
+                                "rate": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/update_password/{id}": {
+            "patch": {
+                "tags": ["User"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "oldPassword": {
+                                    "example": "any"
+                                },
+                                "newPassword": {
+                                    "example": "any"
+                                },
+                                "confirmPassword": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/advertisement/": {
+            "post": {
+                "tags": ["Advertisement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "user_id": {
+                                    "example": "any"
+                                },
+                                "title": {
+                                    "example": "any"
+                                },
+                                "description": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "get": {
+                "description": "",
+                "tags": ["Advertisement"],
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/advertisement/{id}": {
+            "get": {
+                "tags": ["Advertisement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Advertisement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/agreement/": {
+            "post": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id_tenant": {
+                                    "example": "any"
+                                },
+                                "id_landlord": {
+                                    "example": "any"
+                                },
+                                "date_from": {
+                                    "example": "any"
+                                },
+                                "date_to": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/agreement/{id}": {
+            "get": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/agreement/id_ten/{id_tenant}/id_land/{id_landlord}": {
+            "get": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id_tenant",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id_landlord",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/agreement/get_landlord_deals/{id_landlord}": {
+            "get": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id_landlord",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/agreement/get_tenant_deals/{id_tenant}": {
+            "get": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id_tenant",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/agreement/updateStatus/{id}": {
+            "patch": {
+                "tags": ["Agreement"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "newStatus": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/offer/offer": {
+            "post": {
+                "tags": ["Offer"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "fromId": {
+                                    "example": "any"
+                                },
+                                "toId": {
+                                    "example": "any"
+                                },
+                                "dateFrom": {
+                                    "example": "any"
+                                },
+                                "dateTo": {
+                                    "example": "any"
+                                },
+                                "text": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/offer/offers": {
+            "get": {
+                "tags": ["Offer"],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/offer/offers/{id}": {
+            "get": {
+                "tags": ["Offer"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/offer/deleteOffer/{id}": {
+            "delete": {
+                "tags": ["Offer"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/offer/updateStatus/{id}": {
+            "patch": {
+                "tags": ["Offer"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "newStatus": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/comments/": {
+            "post": {
+                "tags": ["Comment"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "from_id": {
+                                    "example": "any"
+                                },
+                                "to_id": {
+                                    "example": "any"
+                                },
+                                "text": {
+                                    "example": "any"
+                                },
+                                "rate": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Comment"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/comments/{id}": {
+            "get": {
+                "tags": ["Comment"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/subscription/": {
+            "get": {
+                "tags": ["Subscription"],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Subscription"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "user_id": {
+                                    "example": "any"
+                                },
+                                "from_date": {
+                                    "example": "any"
+                                },
+                                "to_date": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Subscription"],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/subscription/{id}": {
+            "get": {
+                "tags": ["Subscription"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Subscription"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/report/report": {
+            "post": {
+                "tags": ["Report"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "report_reason": {
+                                    "example": "any"
+                                },
+                                "from_id": {
+                                    "example": "any"
+                                },
+                                "to_id": {
+                                    "example": "any"
+                                },
+                                "text": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/report/reports": {
+            "get": {
+                "tags": ["Report"],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/report/report/{id}": {
+            "get": {
+                "tags": ["Report"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/report/delete_report/{id}": {
+            "delete": {
+                "tags": ["Report"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/report/send_verdict/{id}": {
+            "patch": {
+                "tags": ["Report"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "verdict": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/": {
+            "get": {
+                "tags": ["Server"],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
         }
-      }
-    },
-    "/user/reset_user_password": {
-      "post": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "userId": {
-                              "example": "any"
-                          },
-                          "password": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/update/{id}": {
-      "patch": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {}
-      }
-    },
-    "/user/update_rating": {
-      "patch": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "to_id": {
-                              "example": "any"
-                          },
-                          "rate": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/user/update_password/{id}": {
-      "patch": {
-          "tags": ["User"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "oldPassword": {
-                              "example": "any"
-                          },
-                          "newPassword": {
-                              "example": "any"
-                          },
-                          "confirmPassword": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/advertisement/": {
-      "post": {
-          "tags": ["Advertisement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "user_id": {
-                              "example": "any"
-                          },
-                          "title": {
-                              "example": "any"
-                          },
-                          "description": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      },
-      "get": {
-          "description": "",
-          "tags": ["Advertisement"],
-          "parameters": [
-              {
-                  "name": "limit",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "page",
-                  "in": "query",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/advertisement/{id}": {
-      "get": {
-          "tags": ["Advertisement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      },
-      "delete": {
-          "tags": ["Advertisement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/agreement/": {
-      "post": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "id_tenant": {
-                              "example": "any"
-                          },
-                          "id_landlord": {
-                              "example": "any"
-                          },
-                          "date_from": {
-                              "example": "any"
-                          },
-                          "date_to": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      },
-      "get": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "limit",
-                  "in": "query",
-                  "type": "string"
-              },
-              {
-                  "name": "page",
-                  "in": "query",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/agreement/{id}": {
-      "get": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      },
-      "delete": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      }
-    },
-    "/agreement/id_ten/{id_tenant}/id_land/{id_landlord}": {
-      "get": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id_tenant",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "id_landlord",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/agreement/get_landlord_deals/{id_landlord}": {
-      "get": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id_landlord",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/agreement/get_tenant_deals/{id_tenant}": {
-      "get": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id_tenant",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/agreement/updateStatus/{id}": {
-      "patch": {
-          "tags": ["Agreement"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "newStatus": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      }
-    },
-    "/offer/offer": {
-      "post": {
-          "tags": ["Offer"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "fromId": {
-                              "example": "any"
-                          },
-                          "toId": {
-                              "example": "any"
-                          },
-                          "dateFrom": {
-                              "example": "any"
-                          },
-                          "dateTo": {
-                              "example": "any"
-                          },
-                          "text": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/offer/offers": {
-      "get": {
-          "tags": ["Offer"],
-          "description": "",
-          "parameters": [],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/offer/offers/{id}": {
-      "get": {
-          "tags": ["Offer"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/offer/deleteOffer/{id}": {
-      "delete": {
-          "tags": ["Offer"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/offer/updateStatus/{id}": {
-      "patch": {
-          "tags": ["Offer"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "newStatus": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/comments/": {
-      "post": {
-          "tags": ["Comment"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "from_id": {
-                              "example": "any"
-                          },
-                          "to_id": {
-                              "example": "any"
-                          },
-                          "text": {
-                              "example": "any"
-                          },
-                          "rate": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      },
-      "get": {
-          "tags": ["Comment"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      }
-    },
-    "/comments/{id}": {
-      "get": {
-          "tags": ["Comment"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      }
-    },
-    "/subscription/": {
-      "get": {
-          "tags": ["Subscription"],
-          "description": "",
-          "parameters": [],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      },
-      "post": {
-          "tags": ["Subscription"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "user_id": {
-                              "example": "any"
-                          },
-                          "from_date": {
-                              "example": "any"
-                          },
-                          "to_date": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      },
-      "put": {
-          "tags": ["Subscription"],
-          "description": "",
-          "parameters": [],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/subscription/{id}": {
-      "get": {
-          "tags": ["Subscription"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      },
-      "delete": {
-          "tags": ["Subscription"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/report/report": {
-      "post": {
-          "tags": ["Report"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "authorization",
-                  "in": "header",
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "report_reason": {
-                              "example": "any"
-                          },
-                          "from_id": {
-                              "example": "any"
-                          },
-                          "to_id": {
-                              "example": "any"
-                          },
-                          "text": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              },
-              "401": {
-                  "description": "Unauthorized"
-              }
-          }
-      }
-    },
-    "/report/reports": {
-      "get": {
-          "tags": ["Report"],
-          "description": "",
-          "parameters": [],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/report/report/{id}": {
-      "get": {
-          "tags": ["Report"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/report/delete_report/{id}": {
-      "delete": {
-          "tags": ["Report"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/report/send_verdict/{id}": {
-      "patch": {
-          "tags": ["Report"],
-          "description": "",
-          "parameters": [
-              {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-              },
-              {
-                  "name": "body",
-                  "in": "body",
-                  "schema": {
-                      "type": "object",
-                      "properties": {
-                          "verdict": {
-                              "example": "any"
-                          }
-                      }
-                  }
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
-    },
-    "/": {
-      "get": {
-          "tags": ["Server"],
-          "description": "",
-          "parameters": [],
-          "responses": {
-              "200": {
-                  "description": "OK"
-              }
-          }
-      }
     }
-  }
 }
