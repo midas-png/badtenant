@@ -5,7 +5,7 @@
         "title": "badTenant REST API",
         "description": ""
     },
-    "host": "217.151.229.239/",
+    "host": "217.151.229.239",
     "basePath": "/api/",
     "schemes": ["http"],
     "paths": {
