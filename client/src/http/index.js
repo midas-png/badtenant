@@ -1,12 +1,14 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
+const baseURL = 'http://217.151.229.239/';
+
 const $host = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL,
 });
 
 const $authHost = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL,
 });
 
 const authInterceptor = (config) => {
