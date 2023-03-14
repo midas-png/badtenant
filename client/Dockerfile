@@ -1,10 +1,10 @@
 FROM node:16.14-alpine
 
 WORKDIR /clientapp
-COPY package.json .
-RUN npm install
+COPY package.json /clientapp
+RUN npm i
 COPY . /clientapp
-RUN npm run build
+CMD npm run start
 
 FROM nginx:alpine
 COPY --from=build /clientapp/build /usr/share/nginx/html
