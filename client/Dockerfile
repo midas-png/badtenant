@@ -4,7 +4,7 @@ WORKDIR /clientapp
 COPY package.json /clientapp
 RUN npm i
 COPY . /clientapp
-CMD npm run start
+CMD npm run build
 
 FROM nginx:alpine
 COPY --from=build /clientapp/build /usr/share/nginx/html
