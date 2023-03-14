@@ -10,4 +10,4 @@ COPY . /clientapp
 
 CMD npm run start
 
-EXPOSE 5000
+EXPOSE 3000
