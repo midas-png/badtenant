@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const baseURL = 'http://217.151.229.239/';
+const baseURL = 'http://localhost:5000/';
 
 const $host = axios.create({
   baseURL,

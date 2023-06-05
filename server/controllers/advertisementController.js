@@ -19,7 +19,7 @@ class AdvertisementController{
 
     async getAll(req, res, next){
         try{
-            let {limit, page} = req.query
+            let {limit, page} = req.qusery
 
             page = page || 1
             limit = limit || 9
