@@ -1,7 +1,6 @@
 export { About } from './About';
 export { Account } from './Account';
 export { Advertisement } from './Advertisement';
-export { Chat } from './Chat';
 export { Home } from './Home';
 export { NotFoundPage as NotFound } from './NotFound';
 export { Privacy } from './Privacy';

@@ -2,7 +2,6 @@ import {
   About,
   Account,
   Advertisement,
-  Chat,
   Home,
   Privacy,
   ResetEmail,
@@ -22,21 +21,17 @@ import {
   PRIVACY_ROUTE,
   TERMS_ROUTE,
   ADVERTISEMENT_ROUTE,
-  CHAT_ROUTE,
   ACCOUNT_ROUTE,
   RESET_EMAIL_ROUTE,
   RESET_PASSWORD_ROUTE,
   MAIN_ROUTE,
 } from 'utils/consts';
 import { Routes, Route } from 'react-router-dom';
-import { AuthRoute, UnauthRoute } from 'components/protectedRoute';
+import { UnauthRoute } from 'components/protectedRoute';
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route element={<AuthRoute />}>
-        <Route path={CHAT_ROUTE} element={<Chat />} />
-      </Route>
       <Route element={<UnauthRoute />}>
         <Route path={SIGNIN_ROUTE} element={<Signin />} />
         <Route path={SIGNUP_ROUTE} element={<Signup />} />

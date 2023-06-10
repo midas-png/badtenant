@@ -38,7 +38,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Context } from 'index';
 import { animateScroll as scroll } from 'react-scroll';
 import { getAdvertisement } from 'http/advertisementAPI';
-import { Link } from 'react-router-dom';
 import { Rating } from 'ui';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
@@ -192,9 +191,6 @@ const AdvertisementComponent = () => {
                     Send deal
                   </FunctionLink>
                   <FunctionHR />
-                  <Link to="/chat" style={{ textDecoration: 'none' }}>
-                    <FunctionLink>Chat</FunctionLink>
-                  </Link>
                 </>
               ) : (
                 <FunctionLink>It&apos;s your account</FunctionLink>
