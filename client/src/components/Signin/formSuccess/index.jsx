@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RightContentWrapper, FormSuccessWrapper, Image } from './styles';
+import { RightContentWrapper, FormSuccessWrapper } from './styles';
+import { Assets } from 'assets';
 
 function SuccessSignin() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function SuccessSignin() {
       <FormSuccessWrapper>
         Welcome back! Glad to see you again
       </FormSuccessWrapper>
-      <Image src="assets/svg-8.svg" alt="success-image" />
+      <Assets.Welcome />
     </RightContentWrapper>
   );
 }

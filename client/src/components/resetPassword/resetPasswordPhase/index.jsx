@@ -35,6 +35,7 @@ const ResetPasswordPhase = () => {
   const navigate = useNavigate();
   const [linkError, setLinkError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
   const handleReset = async () => {
     if (Object.keys(validate(values)).length === 0) {
       setLoading(true);
@@ -55,7 +56,7 @@ const ResetPasswordPhase = () => {
 
   useLayoutEffect(() => {
     resetTokenVerify(userId, resetToken, true)
-      .then((data) => {
+      .then(() => {
         setLinkError('');
       })
       .catch((error) => setLinkError(error.response?.data.messaage));

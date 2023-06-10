@@ -193,13 +193,17 @@ export const RadioButtonsWrapper = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const LogoLink = styled(Link)`
@@ -229,6 +233,10 @@ export const FormContentLeft = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 

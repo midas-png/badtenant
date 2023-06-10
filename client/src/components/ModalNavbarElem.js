@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
   display: flex;
+  width: fit-content;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -12,8 +13,7 @@ export const ModalTitle = styled.h2``;
 
 export const ModalParagraph = styled.p`
   text-align: center;
-  height: 50px;
-  width: 90%;
+  width: 80%;
 `;
 
 export const ButtonsWrapper = styled.div`

@@ -14,18 +14,16 @@ export const Container = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
-  width: 100%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 24px;
+  padding: 100px 24px;
   justify-content: center;
 `;
 
 export const InfoRow = styled.div`
   display: grid;
-  grid-auto-columns: minmax(auto, lfr);
+  grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
   grid-template-areas: ${({ imageStart }) =>
     imageStart ? '\'col2 col1\'' : '\'col1 col2\''};
@@ -46,6 +44,10 @@ export const InfoColumn2 = styled.div`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col2;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const TextWrapper = styled.div`

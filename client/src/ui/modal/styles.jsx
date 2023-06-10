@@ -4,8 +4,8 @@ export const ModalWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
@@ -15,10 +15,9 @@ export const ModalWrapper = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  min-height: 100px;
-  min-width: 450px;
   background: #fff;
-  padding: 15px;
   border-radius: 20px;
   transition: 0.5s;
+  padding: 20px 0;
+  width: 500px;
 `;

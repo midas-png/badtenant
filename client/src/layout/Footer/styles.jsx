@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.footer`
   background-color: #101522;
-
-  @media screen and (max-width: 768px) {
-    height: 101vh;
-  }
 `;
 
 export const Wrapper = styled.div`
@@ -111,16 +107,4 @@ export const SocialMediaIcon = styled.div`
 export const SocialMediaIconLink = styled.a`
   color: #fff;
   font-size: 24px;
-`;
-
-export const FooterA = styled.a`
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  font-size: 14px;
-
-  &:hover {
-    color: #ff6700;
-    transition: 0.3s ease-out;
-  }
 `;

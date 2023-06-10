@@ -93,7 +93,7 @@ export const fetchFiltered = async (
   page,
   searchableRole,
   ratingRange,
-  sortType
+  sortType,
 ) => {
   const { data } = await $host.get(
     `api/user/filter?nameLike=${nameLike}&limit=${limit}&page=${page}&searchableRole=${searchableRole}&ratingRange=${ratingRange}&sortType=${sortType}`,
@@ -109,21 +109,21 @@ export const fetchSearched = async (name, limit, page) => {
 };
 
 export const sendResetLink = async (email) => {
-  const { data } = await $host.post(
-    'api/user/reset_password', {email}
-  );
+  const { data } = await $host.post('api/user/reset_password', { email });
   return data;
 };
 
 export const resetTokenVerify = async (userId, token, disableRedirect) => {
-  const { data } = await $host.get(`api/user/reset_password/${userId}/${token}?disableRedirect=${disableRedirect}`);
+  const { data } = await $host.get(
+    `api/user/reset_password/${userId}/${token}?disableRedirect=${disableRedirect}`,
+  );
   return data;
 };
 
 export const resetUserPassword = async (userId, password) => {
   const { data } = await $host.post('api/user/reset_user_password', {
     userId,
-    password
+    password,
   });
   return data;
 };

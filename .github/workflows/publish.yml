@@ -36,9 +36,7 @@ jobs:
             tar -xf publish.tar -C ~/
             rm publish.tar
             cd publish
-            cd client
-            echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} > .env
-            cd ../server
+            cd server
             mkdir env
             cd env
             echo PORT=${{ secrets.PORT }} > production.env

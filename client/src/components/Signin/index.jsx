@@ -18,7 +18,7 @@ function FormLogin() {
       <FormContainer>
         <LogoLink to="/">badTenant</LogoLink>
         <FormContentLeft>
-          <Assets.SvgAsset7 />
+          <Assets.Signin />
         </FormContentLeft>
         {isValid ? (
           <SuccessSignin />

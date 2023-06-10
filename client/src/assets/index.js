@@ -5,6 +5,8 @@ import { ReactComponent as SvgAsset4 } from 'assets/svg-4.svg';
 import { ReactComponent as SvgAsset5 } from 'assets/svg-5.svg';
 import { ReactComponent as SvgAsset6 } from 'assets/svg-6.svg';
 import { ReactComponent as SvgAsset7 } from 'assets/svg-7.svg';
+import { ReactComponent as Signin } from 'assets/signin.svg';
+import { ReactComponent as Welcome } from 'assets/welcome.svg';
 import UserNoImage from 'assets/test_image.jpg';
 import HeroVideo from 'assets/video.mp4';
 
@@ -16,6 +18,8 @@ export const Assets = {
   SvgAsset5,
   SvgAsset6,
   SvgAsset7,
+  Signin,
+  Welcome,
   UserNoImage,
   HeroVideo,
 };

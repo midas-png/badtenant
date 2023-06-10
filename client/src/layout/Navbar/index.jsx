@@ -83,24 +83,24 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
             <NavMenu>
               <NavItem>
                 <NavLink
-                  to="/about"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}>
-                  About badTenant
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
                   to="/search"
                   smooth={true}
                   duration={500}
                   spy={true}
                   exact="true"
                   offset={-80}>
-                  Search
+                  Catalog
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  to="/about"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}>
+                  About
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -112,17 +112,6 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
                   exact="true"
                   offset={-80}>
                   Contact Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  to="/subscription"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}>
-                  Subscription
                 </NavLink>
               </NavItem>
             </NavMenu>
