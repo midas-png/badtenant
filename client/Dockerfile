@@ -1,13 +1,13 @@
 FROM node:lts-gallium as build
-WORKDIR /client
+WORKDIR /clientapp
 COPY . .
 RUN npm install
-COPY . /client
+COPY . /clientapp
 RUN npm run build
 
 # production environment
 FROM nginx:alpine
-COPY --from=build /client/build /usr/share/nginx/html
+COPY --from=build /clientapp/build /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
