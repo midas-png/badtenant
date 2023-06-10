@@ -2,12 +2,12 @@ FROM node:16.14-alpine
 
 WORKDIR /clientapp
 
-COPY . .
+COPY package.json /clientapp
 
-RUN npm install
+RUN npm i
 
 COPY . /clientapp
 
-RUN npm run start
+CMD npm run start
 
 EXPOSE 3000
