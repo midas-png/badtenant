@@ -1,6 +1,6 @@
 FROM node:lts-gallium as build
 WORKDIR /client
-COPY package.json .
+COPY . .
 RUN npm install
 COPY . /client
 RUN npm run build
