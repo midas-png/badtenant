@@ -5,6 +5,9 @@ RUN npm install
 COPY . /clientapp
 RUN npm run build
 
+# temporary
+RUN npm run start
+
 # production environment
 FROM nginx:alpine
 COPY --from=build /clientapp/build /usr/share/nginx/html
