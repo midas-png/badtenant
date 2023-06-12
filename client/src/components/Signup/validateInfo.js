@@ -45,12 +45,6 @@ export default function validateInfo(values, signupProgress) {
     if (!values.city) {
       errors.city = 'City is required';
     }
-
-    if (!values.id) {
-      errors.id = 'ID is required';
-    } else if (!/^[A-Z0-9]\d{7,8}$/.test(values.id.trim())) {
-      errors.id = 'invalid ID';
-    }
   }
 
   if (signupProgress === 3) {

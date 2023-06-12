@@ -57,7 +57,6 @@ const FormSignup = ({ submitForm, setIsValid }) => {
         values.lastName,
         values.email,
         values.password,
-        values.id,
         values.state + ' ' + values.city,
         values.description,
         image,
@@ -172,12 +171,12 @@ const FormSignup = ({ submitForm, setIsValid }) => {
               </ImageUploadLabel>
             </ImageUploadWrapper>
             <FormInputs>
-              <FormLabel htmlFor="state">Enter your state</FormLabel>
+              <FormLabel htmlFor="state">Enter your country</FormLabel>
               <FormInput
                 id="state"
                 type="text"
                 name="state"
-                placeholder="Enter your state"
+                placeholder="Enter your country"
                 value={values.state}
                 onChange={handleChange}
               />
@@ -196,19 +195,6 @@ const FormSignup = ({ submitForm, setIsValid }) => {
               />
 
               {errors.city && <ErrorText>{errors.city}</ErrorText>}
-            </FormInputs>
-            <FormInputs>
-              <FormLabel htmlFor="id">Enter your ID</FormLabel>
-              <FormInput
-                id="id"
-                type="text"
-                name="id"
-                placeholder="Enter your ID"
-                value={values.id}
-                onChange={handleChange}
-              />
-
-              {errors.id && <ErrorText>{errors.id}</ErrorText>}
             </FormInputs>
             <FormInputButtonsWrapper>
               <FormInputBtnWrapper onClick={() => setSignupProgress(1)}>

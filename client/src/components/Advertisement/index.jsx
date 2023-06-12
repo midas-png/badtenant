@@ -10,9 +10,7 @@ import {
   CommentContent,
   AdvertisementFunctions,
   FunctionLink,
-  FunctionHR,
   NavigationWrapper,
-  NavigationButton,
   RatingWrapper,
   CommentHeader,
   UserNotLogonSpanWrapper,
@@ -33,6 +31,7 @@ import {
   WarningIcon,
   WarningText,
 } from './modalStyles';
+import { GrFormPrevious } from 'react-icons/gr';
 import { Modal } from 'ui';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Context } from 'index';
@@ -46,6 +45,7 @@ import { Temporal } from '@js-temporal/polyfill';
 import { createOffer } from 'http/offersAPI';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Assets } from 'assets';
 
 const StyledItem = styled(PaginationItem)`
   color: #000;
@@ -59,8 +59,7 @@ const AdvertisementComponent = () => {
   const [modalActive, setModalActive] = useState(false);
   const [advertisementInfo, setAdvertisementInfo] = useState({ info: [] });
   const [currentPage, setCurrentPage] = useState(1);
-  // eslint-disable-next-line no-unused-vars
-  const [commentsPerPage, setCommentsPerPage] = useState(8);
+  const commentsPerPage = 8;
   const [countPage, setCountPage] = useState(0);
   const [comments, setComments] = useState([]);
   const [dateFrom, setDateFrom] = useState(new Date());
@@ -166,9 +165,9 @@ const AdvertisementComponent = () => {
     <>
       <ToastContainer />
       <AdvertisementWrapper>
-        <AdvertisementImage />
+        <AdvertisementImage src={Assets.UserNoImage} />
         <NavigationWrapper onClick={() => navigate(-1)}>
-          <NavigationButton>Back</NavigationButton>
+          <GrFormPrevious />
         </NavigationWrapper>
         <AdvertisementName>{advertisementInfo.title}</AdvertisementName>
         <RatingWrapper>
@@ -182,16 +181,13 @@ const AdvertisementComponent = () => {
             </UserNotLogonSpanWrapper>
           )}
         </RatingWrapper>
-        {user.isAuth ? (
+        {user.isAuth && (
           <>
             <AdvertisementFunctions>
               {user.user.id != id ? (
-                <>
-                  <FunctionLink onClick={() => setModalActive(true)}>
-                    Send deal
-                  </FunctionLink>
-                  <FunctionHR />
-                </>
+                <FunctionLink onClick={() => setModalActive(true)}>
+                  Send Offer
+                </FunctionLink>
               ) : (
                 <FunctionLink>It&apos;s your account</FunctionLink>
               )}
@@ -201,7 +197,7 @@ const AdvertisementComponent = () => {
                 <span>Reviews</span>
                 <hr
                   style={{
-                    width: '500%',
+                    width: '250%',
                   }}
                 />
               </CommentHeader>
@@ -220,18 +216,18 @@ const AdvertisementComponent = () => {
                     </CommentContent>
                   </CommentWrapper>
                 ))}
-              {advertisementInfo.comments?.length > 0 ? null : (
+              {advertisementInfo.comments?.length === 0 && (
                 <span style={{ padding: '30px' }}>
-                  No reviews yet. Make a deal first!
+                  No reviews yet. Send a deal first!
                 </span>
               )}
             </AdvertisementComments>
           </>
-        ) : null}
+        )}
         {modalActive ? (
           <Modal active={modalActive} setActive={setModalActive}>
             <ModalWrapper>
-              <ModalTitle>Send an Offer</ModalTitle>
+              <ModalTitle>Send Offer</ModalTitle>
               <ModalDateWrapper>
                 <DateWrapper>
                   <ModalLabel htmlFor="date_from">Date From</ModalLabel>
@@ -281,7 +277,7 @@ const AdvertisementComponent = () => {
             </ModalWrapper>
           </Modal>
         ) : null}
-        {user.isAuth ? (
+        {user.isAuth && comments?.length ? (
           <Pagination
             count={countPage}
             onChange={handleChange}

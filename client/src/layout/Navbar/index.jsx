@@ -82,37 +82,17 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
             </BurgerIcon>
             <NavMenu>
               <NavItem>
-                <NavLink
-                  to="/search"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}>
+                <NavLink to="/search">
                   Catalog
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  to="/about"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}>
+                <NavLink to="/about">
                   About
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  to="/contact"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}>
-                  Contact Us
-                </NavLink>
+                <NavLink to="/contact">Contact Us</NavLink>
               </NavItem>
             </NavMenu>
             {!user.isAuth ? (

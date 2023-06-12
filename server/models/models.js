@@ -9,7 +9,6 @@ const User = sequelize.define("user", {
     rate: { type: DataTypes.FLOAT, defaultValue: 0 },
     email: { type: DataTypes.STRING, unique: true },
     password: { type: DataTypes.STRING },
-    id_number: { type: DataTypes.STRING, unique: true },
     location: { type: DataTypes.STRING, allowNull: false },
     description: { type: DataTypes.STRING, allowNull: false },
     img: { type: DataTypes.STRING },

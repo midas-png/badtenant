@@ -7,7 +7,6 @@ export const AdvertisementWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  min-height: 130vh;
   background: linear-gradient(
     150deg,
     rgb(255, 103, 0) 0%,
@@ -16,14 +15,20 @@ export const AdvertisementWrapper = styled.div`
   padding-bottom: 50px;
 `;
 
-export const AdvertisementImage = styled.div`
-  // замени на img
+export const AdvertisementImage = styled.img`
   margin-top: 120px;
   background: #fff;
-  width: 400px;
   height: 400px;
-  border-radius: 40px;
+  width: 400px;
+  border-radius: 200px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 768px) {
+    left: 5%;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+  }
 `;
 
 export const AdvertisementName = styled.span`
@@ -38,7 +43,6 @@ export const AdvertisementComments = styled.div`
   flex-direction: column;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   background: #fff;
-  width: 450px;
   min-height: 100px;
   border-radius: 20px;
 `;
@@ -60,7 +64,7 @@ export const CommentImage = styled.div`
   width: 50px;
   height: 50px;
   grid-area: A;
-  border-radius: 7px;
+  border-radius: 25px;
   background: #ff6700;
 `;
 
@@ -94,19 +98,27 @@ export const FunctionHR = styled.hr`
 
 export const NavigationWrapper = styled.div`
   position: absolute;
+  display: flex;
   top: 17%;
   left: 22%;
+  justify-content: center;
+  align-items: center;
   background: #fff;
-  padding: 10px 30px;
+  padding: 5px;
   border-radius: 30px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+
   @media screen and (max-width: 768px) {
+    top: 14%;
     left: 5%;
   }
 `;
-
-export const NavigationButton = styled.span``;
 
 export const RatingWrapper = styled.div`
   display: flex;

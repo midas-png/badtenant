@@ -9,8 +9,6 @@ const useForm = (callback, validate) => {
     email: '',
     password: '',
     password2: '',
-    id: '',
-    country: 'USA',
     state: '',
     city: '',
     description: '',

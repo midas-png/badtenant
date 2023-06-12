@@ -30,7 +30,6 @@ class UserController {
                 last_name,
                 email,
                 password,
-                id_number,
                 location,
                 description,
                 img,
@@ -41,7 +40,6 @@ class UserController {
                 !last_name ||
                 !email ||
                 !password ||
-                !id_number ||
                 !location ||
                 !role
             ) {
@@ -67,7 +65,6 @@ class UserController {
                 last_name: last_name,
                 email: email,
                 password: hashPassword,
-                id_number: id_number,
                 location: location,
                 description: description,
                 img: img,
@@ -78,7 +75,7 @@ class UserController {
             //     userId: user.id,
             //     token: token,
             // });
-            // const message = `${process.env.BASE_URL}/user/verify/${user.id}/${userToken.token}`;
+            // const message = `http://217.151.229.239/api/user/verify/${user.id}/${userToken.token}`;
             // await sendMail(user.email, "Confirm Email", message);
 
             return res.json({message: 'User was created'});
