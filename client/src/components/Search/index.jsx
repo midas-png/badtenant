@@ -14,6 +14,8 @@ import {
   FilterButtonWrapper,
   FilterButton,
   RadioButtonsWrapper,
+  LoaderWrapper,
+  Loader,
 } from './styles';
 import { Userblock } from 'components';
 import { ToastContainer, toast } from 'react-toastify';
@@ -50,15 +52,14 @@ const activateToast = (type, message) => {
 };
 
 const SearchComponent = observer(() => {
-  // eslint-disable-next-line no-unused-vars
   const [searchTerm, setSearchTerm] = useState('');
   const [filtersRole, setFiltersRole] = useState('ALL');
   const [filtersRatingSlider, setFiltersRatingSlider] = useState([0, 5]);
   const [chandingNotAvaliable, setChangingNotAvaliable] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
   const [pageCount, setPageCount] = useState(0);
-  // eslint-disable-next-line no-unused-vars
-  const [limit, setLimit] = useState(9);
+  const [loading, setLoading] = useState(false);
+  const limit = 9;
   const { advertisement, user } = useContext(Context);
 
   useLayoutEffect(() => {
@@ -109,12 +110,12 @@ const SearchComponent = observer(() => {
   }, [user.isAuth]);
 
   useEffect(() => {
-    getAdvertisements(pageNumber).then((data) =>
-      advertisement.setAdvertisement(data),
-    );
-    getAdvertisements(pageNumber).then((data) =>
-      advertisement.setComments(data),
-    );
+    setLoading(true);
+    getAdvertisements(pageNumber)
+      .then((data) => advertisement.setAdvertisement(data))
+      .finally(() => {
+        setLoading(false);
+      });
   }, [pageNumber]);
 
   const handleChange = (event, value) => {
@@ -138,7 +139,6 @@ const SearchComponent = observer(() => {
       )
         .then((data) => {
           advertisement.setAdvertisement(data);
-          advertisement.setComments(data);
         })
         .catch((error) => console.error(error));
       setChangingNotAvaliable(true);
@@ -161,7 +161,7 @@ const SearchComponent = observer(() => {
     let averageRating = 0;
     let ratingLength = 0;
 
-    advertisement.comments.map((value) => {
+    advertisement.advertisements.map((value) => {
       JSON.parse(JSON.stringify(value.comments)).forEach((element) => {
         if (element.to_id == id) {
           averageRating = averageRating + element.rate;
@@ -278,41 +278,56 @@ const SearchComponent = observer(() => {
               }}
             />
           </SearchBarOuterWrapper>
-          <div>
-            <UserblockWrapper>
-              {advertisement.advertisements
-                .filter((value) => {
-                  if (value.id != user.user.id) {
-                    return value;
-                  }
-                })
-                .map((ad) => (
-                  <Userblock
-                    key={ad.id}
-                    linkTo={ad.id}
-                    userName={ad.title}
-                    userLocation={ad.location}
-                    userRate={getRating(ad.id)}
-                    totalComments={ad.comments.length}
-                    registrationDate={Temporal.Instant.from(ad.createdAt)
-                      .toZonedDateTimeISO('America/Los_Angeles')
-                      .toPlainDate()
-                      .toString()}
-                  />
-                ))}
-            </UserblockWrapper>
-            {advertisement.isAdvertisementsClear && (
-              <PaginationWrapper>
-                <Pagination
-                  count={pageCount}
-                  page={pageNumber}
-                  onChange={handleChange}
-                  size="large"
-                  renderItem={(item) => <StyledItem {...item} />}
+          {loading ? (
+            <LoaderWrapper>
+              <Loader>
+                <circle
+                  className="path"
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  strokeWidth="4"
                 />
-              </PaginationWrapper>
-            )}
-          </div>
+              </Loader>
+            </LoaderWrapper>
+          ) : (
+            <div>
+              <UserblockWrapper>
+                {advertisement.advertisements
+                  .filter((value) => {
+                    if (value.id != user.user.id) {
+                      return value;
+                    }
+                  })
+                  .map((ad) => (
+                    <Userblock
+                      key={ad.id}
+                      linkTo={ad.id}
+                      userName={ad.title}
+                      userLocation={ad.location}
+                      userRate={getRating(ad.id)}
+                      totalComments={ad.comments.length}
+                      registrationDate={Temporal.Instant.from(ad.createdAt)
+                        .toZonedDateTimeISO('America/Los_Angeles')
+                        .toPlainDate()
+                        .toString()}
+                    />
+                  ))}
+              </UserblockWrapper>
+              {advertisement.isAdvertisementsClear && (
+                <PaginationWrapper>
+                  <Pagination
+                    count={pageCount}
+                    page={pageNumber}
+                    onChange={handleChange}
+                    size="large"
+                    renderItem={(item) => <StyledItem {...item} />}
+                  />
+                </PaginationWrapper>
+              )}
+            </div>
+          )}
         </SearchResultWrapper>
       </SearchWrapper>
     </>
