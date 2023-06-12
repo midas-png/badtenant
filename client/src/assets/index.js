@@ -6,6 +6,7 @@ import { ReactComponent as SvgAsset5 } from 'assets/svg-5.svg';
 import { ReactComponent as SvgAsset6 } from 'assets/svg-6.svg';
 import { ReactComponent as SvgAsset7 } from 'assets/svg-7.svg';
 import { ReactComponent as Signin } from 'assets/signin.svg';
+import { ReactComponent as Signup } from 'assets/signup.svg';
 import { ReactComponent as Welcome } from 'assets/welcome.svg';
 import { ReactComponent as ForgotPassword } from 'assets/forgot_password.svg';
 import UserNoImage from 'assets/test_image.jpg';
@@ -20,6 +21,7 @@ export const Assets = {
   SvgAsset6,
   SvgAsset7,
   Signin,
+  Signup,
   Welcome,
   ForgotPassword,
   UserNoImage,
