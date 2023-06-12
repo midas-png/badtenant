@@ -31,4 +31,5 @@ export const Button = styled(Link)`
 export const ButtonRequest = styled.button`
   ${buttonStyle}
   width: 130px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 `;

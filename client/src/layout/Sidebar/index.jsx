@@ -33,7 +33,7 @@ export const Sidebar = ({ isOpen, setReverse }) => {
         <SidebarMenu>
           {user.isAuth && (
             <>
-              <SidebarLink to={`/account/${user.user.id}`} onClick={setReverse}>
+              <SidebarLink to='/account' onClick={setReverse}>
                 My Account
               </SidebarLink>
               <SidebarLink

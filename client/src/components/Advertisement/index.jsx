@@ -33,7 +33,7 @@ import {
 } from './modalStyles';
 import { GrFormPrevious } from 'react-icons/gr';
 import { Modal } from 'ui';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Context } from 'index';
 import { animateScroll as scroll } from 'react-scroll';
 import { getAdvertisement } from 'http/advertisementAPI';
@@ -142,7 +142,7 @@ const AdvertisementComponent = () => {
       setComments(data.comments?.slice(0, commentsPerPage));
       setAdvertisementInfo(data);
     });
-  }, []);
+  }, [id]);
 
   const handleChange = (e, value) => {
     setCurrentPage(value);
@@ -209,7 +209,9 @@ const AdvertisementComponent = () => {
                 })
                 .map((comment) => (
                   <CommentWrapper key={comment.id}>
-                    <CommentImage></CommentImage>
+                    <Link to={'/advertisement/' + comment.from_id}>
+                      <CommentImage src={Assets.UserNoImage} />
+                    </Link>
                     <CommentContent>
                       <Rating rate={comment.rate} />
                       <CommentUnit>{comment.text}</CommentUnit>

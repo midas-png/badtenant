@@ -10,6 +10,10 @@ export const SidebarWrapper = styled.div`
   width: 200px;
   min-height: 300px;
   padding-top: 80px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SidebarItem = styled(Link)`

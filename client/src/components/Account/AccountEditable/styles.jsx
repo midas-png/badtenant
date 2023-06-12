@@ -13,9 +13,7 @@ export const AccountEditableWrapper = styled.div`
 
 export const MainInfoWrapper = styled.div`
   display: flex;
-  padding: 40px;
   flex-direction: column;
-  min-height: 600px;
   width: 100%;
 `;
 
@@ -34,10 +32,9 @@ export const MainInfoHR = styled.hr`
 
 export const MainWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 30px;
-  height: 500px;
-  width: 80%;
 `;
 
 export const ProfilePicture = styled.img`
@@ -45,12 +42,12 @@ export const ProfilePicture = styled.img`
   width: 300px;
   background: #fff;
   border-radius: 150px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 `;
 
 export const EditableWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 400px;
   min-width: 200px;
 `;
 
@@ -84,10 +81,12 @@ export const DescriptionItem = styled.textarea`
 `;
 
 export const AccountWrapper = styled.div`
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin: 80px 0;
   width: 100%;
+  padding-left: 40px;
 `;
 
 export const FormLabel = styled.label`

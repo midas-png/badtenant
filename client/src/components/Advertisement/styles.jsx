@@ -59,8 +59,7 @@ export const CommentWrapper = styled.div`
   align-items: center;
 `;
 
-export const CommentImage = styled.div`
-  // замени на img
+export const CommentImage = styled.img`
   width: 50px;
   height: 50px;
   grid-area: A;
@@ -70,10 +69,8 @@ export const CommentImage = styled.div`
 
 export const CommentContent = styled.div`
   display: flex;
-  height: 70px;
   align-items: flex-start;
   gap: 10px;
-  width: 300px;
   margin: 30px;
   flex-direction: column;
 `;

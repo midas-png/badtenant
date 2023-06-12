@@ -2,14 +2,13 @@ import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
-export const DealsWrapper = styled.div`
-  min-height: 400px;
-  padding: 40px;
-`;
+export const DealsWrapper = styled.div``;
 
 export const DealsBlockWrapper = styled.div`
   margin-top: 30px;
   min-height: 200px;
+  width: fit-content;
+  min-width: 300px;
 `;
 
 export const DealsBlock = styled.div`
@@ -20,7 +19,6 @@ export const DealsBlock = styled.div`
   align-items: center;
   background: #fff;
   height: 300px;
-  width: 650px;
   border-radius: 20px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   overflow-y: ${({ dealsNumber }) => (dealsNumber === 0 ? 'hidden' : 'scroll')};

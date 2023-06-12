@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 export const AccountOffersWrapper = styled.div`
   display: flex;
-  padding: 40px;
   flex-direction: column;
-  min-height: 100px;
-  width: 100%;
 `;
 
 export const OffersHeaderWrapper = styled.div`

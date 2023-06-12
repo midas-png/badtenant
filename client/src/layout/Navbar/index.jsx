@@ -112,7 +112,7 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
                 />
                 {dropdown && (
                   <DropdownWrapper>
-                    <DropdownItem to={`/account/${user.user.id}`}>
+                    <DropdownItem to='/account'>
                       My Account
                     </DropdownItem>
                     <DropdownItem to={`/advertisement/${user.user.id}`}>
