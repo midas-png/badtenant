@@ -60,7 +60,7 @@ const FormEmailPhase = () => {
       <FormContainer>
         <LogoLink to="/">badTenant</LogoLink>
         <FormContentLeft>
-          <Assets.SvgAsset7 />
+          <Assets.ForgotPassword />
         </FormContentLeft>
         {!submitted ? (
           <ContentRight>

@@ -301,15 +301,17 @@ const SearchComponent = observer(() => {
                   />
                 ))}
             </UserblockWrapper>
-            <PaginationWrapper>
-              <Pagination
-                count={pageCount}
-                page={pageNumber}
-                onChange={handleChange}
-                size="large"
-                renderItem={(item) => <StyledItem {...item} />}
-              />
-            </PaginationWrapper>
+            {advertisement.isAdvertisementsClear && (
+              <PaginationWrapper>
+                <Pagination
+                  count={pageCount}
+                  page={pageNumber}
+                  onChange={handleChange}
+                  size="large"
+                  renderItem={(item) => <StyledItem {...item} />}
+                />
+              </PaginationWrapper>
+            )}
           </div>
         </SearchResultWrapper>
       </SearchWrapper>

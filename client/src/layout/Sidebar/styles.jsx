@@ -32,14 +32,21 @@ export const Icon = styled.div`
 `;
 
 export const SidebarWrapper = styled.div`
-  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 160px 0 100px;
+  height: 100%;
 `;
 
 export const SidebarMenu = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 80px);
+    grid-template-rows: repeat(3, fit-content(100%));
+    gap: 50px 0;
     text-align: center;
+    width: fit-content;
 
     @media screen and (
         grid-template-rows: repeat(6, 60px);

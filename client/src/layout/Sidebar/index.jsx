@@ -25,7 +25,7 @@ export const Sidebar = ({ isOpen, setReverse }) => {
   };
 
   return (
-    <Container isOpen={isOpen} onClick={setReverse}>
+    <Container isOpen={isOpen}>
       <Icon onClick={setReverse}>
         <CloseIcon />
       </Icon>
@@ -43,17 +43,14 @@ export const Sidebar = ({ isOpen, setReverse }) => {
               </SidebarLink>
             </>
           )}
-          <SidebarLink to="/about" onClick={setReverse}>
-            About badTenant
-          </SidebarLink>
           <SidebarLink to="/search" onClick={setReverse}>
-            Search
+            Catalog
           </SidebarLink>
-          <SidebarLink to="/subscription" onClick={setReverse}>
-            Subscription
+          <SidebarLink to="/about" onClick={setReverse}>
+            About
           </SidebarLink>
           <SidebarLink to="/contact" onClick={setReverse}>
-            Contact Us
+            Contacts
           </SidebarLink>
         </SidebarMenu>
         <SideButtonWrapper>

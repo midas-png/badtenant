@@ -58,6 +58,10 @@ export default class AdvertisementStore {
     return this._advertisement;
   }
 
+  get isAdvertisementsClear() {
+    return this._advertisement.length !== 0;
+  }
+
   get comments() {
     return this._comments;
   }
