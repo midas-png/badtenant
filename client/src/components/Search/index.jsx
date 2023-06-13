@@ -178,92 +178,6 @@ const SearchComponent = observer(() => {
     <>
       <ToastContainer />
       <SearchWrapper>
-        <SearchLeftWrapper>
-          <SearchFiltersWrapper>
-            <h2>Filters</h2>
-            <FiltersHR />
-            <FiltersWrapper>
-              <FilterBlockWrapper>
-                <FilterLabel>I&apos;m searching for...</FilterLabel>
-                <RadioButtonsWrapper>
-                  <RadioButton
-                    id="allRadio"
-                    label="All"
-                    name="ALL"
-                    isFontDark="true"
-                    value={filtersRole === 'ALL'}
-                    onChange={() => handleRoleFilterChange('ALL')}
-                  />
-                  <RadioButton
-                    id="tenantRadio"
-                    label="Tenant"
-                    name="TENANT"
-                    isFontDark="true"
-                    value={filtersRole === 'TENANT'}
-                    onChange={() => handleRoleFilterChange('TENANT')}
-                  />
-                  <RadioButton
-                    id="landlordRadio"
-                    label="Landlord"
-                    name="LANDLORD"
-                    isFontDark="true"
-                    value={filtersRole === 'LANDLORD'}
-                    onChange={() => handleRoleFilterChange('LANDLORD')}
-                  />
-                </RadioButtonsWrapper>
-              </FilterBlockWrapper>
-              <FilterBlockWrapper>
-                <FilterLabel>Rating Range (Stars)</FilterLabel>
-                <Slider
-                  getAriaLabel={() => 'Always visible'}
-                  value={filtersRatingSlider}
-                  onChange={handleSliderChange}
-                  valueLabelDisplay="auto"
-                  step={0.5}
-                  min={0}
-                  max={5}
-                  marks={[
-                    {
-                      value: 0,
-                      label: '0',
-                    },
-                    {
-                      value: 1,
-                      label: '1',
-                    },
-                    {
-                      value: 2,
-                      label: '2',
-                    },
-                    {
-                      value: 3,
-                      label: '3',
-                    },
-                    {
-                      value: 4,
-                      label: '4',
-                    },
-                    {
-                      value: 5,
-                      label: '5',
-                    },
-                  ]}
-                  disableSwap
-                  style={{
-                    color: '#ff6700',
-                  }}
-                />
-              </FilterBlockWrapper>
-              <FilterButtonWrapper>
-                <FilterButton
-                  disabled={chandingNotAvaliable}
-                  onClick={handleFiltersApply}>
-                  Apply Filters
-                </FilterButton>
-              </FilterButtonWrapper>
-            </FiltersWrapper>
-          </SearchFiltersWrapper>
-        </SearchLeftWrapper>
         <SearchResultWrapper>
           <SearchBarOuterWrapper>
             <SearchBar
@@ -278,6 +192,92 @@ const SearchComponent = observer(() => {
               }}
             />
           </SearchBarOuterWrapper>
+          <SearchLeftWrapper>
+            <SearchFiltersWrapper>
+              <h2>Filters</h2>
+              <FiltersHR />
+              <FiltersWrapper>
+                <FilterBlockWrapper>
+                  <FilterLabel>I&apos;m searching for...</FilterLabel>
+                  <RadioButtonsWrapper>
+                    <RadioButton
+                      id="allRadio"
+                      label="All"
+                      name="ALL"
+                      isFontDark="true"
+                      value={filtersRole === 'ALL'}
+                      onChange={() => handleRoleFilterChange('ALL')}
+                    />
+                    <RadioButton
+                      id="tenantRadio"
+                      label="Tenant"
+                      name="TENANT"
+                      isFontDark="true"
+                      value={filtersRole === 'TENANT'}
+                      onChange={() => handleRoleFilterChange('TENANT')}
+                    />
+                    <RadioButton
+                      id="landlordRadio"
+                      label="Landlord"
+                      name="LANDLORD"
+                      isFontDark="true"
+                      value={filtersRole === 'LANDLORD'}
+                      onChange={() => handleRoleFilterChange('LANDLORD')}
+                    />
+                  </RadioButtonsWrapper>
+                </FilterBlockWrapper>
+                <FilterBlockWrapper>
+                  <FilterLabel>Rating Range (Stars)</FilterLabel>
+                  <Slider
+                    getAriaLabel={() => 'Always visible'}
+                    value={filtersRatingSlider}
+                    onChange={handleSliderChange}
+                    valueLabelDisplay="auto"
+                    step={0.5}
+                    min={0}
+                    max={5}
+                    marks={[
+                      {
+                        value: 0,
+                        label: '0',
+                      },
+                      {
+                        value: 1,
+                        label: '1',
+                      },
+                      {
+                        value: 2,
+                        label: '2',
+                      },
+                      {
+                        value: 3,
+                        label: '3',
+                      },
+                      {
+                        value: 4,
+                        label: '4',
+                      },
+                      {
+                        value: 5,
+                        label: '5',
+                      },
+                    ]}
+                    disableSwap
+                    style={{
+                      color: '#ff6700',
+                    }}
+                  />
+                </FilterBlockWrapper>
+                <FilterButtonWrapper>
+                  <FilterButton
+                    disabled={chandingNotAvaliable}
+                    onClick={handleFiltersApply}>
+                    Apply Filters
+                  </FilterButton>
+                </FilterButtonWrapper>
+              </FiltersWrapper>
+            </SearchFiltersWrapper>
+          </SearchLeftWrapper>
           {loading ? (
             <LoaderWrapper>
               <Loader>

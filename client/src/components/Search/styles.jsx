@@ -4,12 +4,15 @@ import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 
 export const SearchWrapper = styled.div`
   margin-top: 30px;
-  display: grid;
-  grid-auto-columns: minmax(125px, auto);
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   gap: 30px;
   background: linear-gradient(150deg, #ff6700 0%, #ffb98a 100%);
   padding: 100px;
+
+  @media screen and (max-width: 768px) {
+    padding: 30px;
+    padding-top: 100px;
+  }
 `;
 
 export const SearchInput = styled.input.attrs({
@@ -184,6 +187,8 @@ export const FilterButton = styled.button`
 export const SearchLeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 250px;
+  max-width: 500px;
 `;
 
 export const PaginationWrapper = styled.div`
@@ -218,16 +223,13 @@ export const SearchButton = styled.div`
 export const SearchInputButtonWrapper = styled.div`
   display: flex;
   gap: 20px;
-  padding: 0 10px;
 `;
 
 export const SearchIcon = styled(AiOutlineSearch)`
   font-size: 18px;
 `;
 
-export const SearchBarOuterWrapper = styled.div`
-  width: 70%;
-`;
+export const SearchBarOuterWrapper = styled.div``;
 
 export const SortSpan = styled.span`
   color: #fff;

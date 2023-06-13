@@ -14,6 +14,7 @@ export const SearchInput = styled.input.attrs({
 
 export const BarWrapper = styled.div`
   display: flex;
+  justify-content: center;
   flex-direction: column;
 `;
 
@@ -32,7 +33,9 @@ export const SearchBarWrapper = styled.div`
   justify-content: center;
   background: #fff;
   border-radius: 20px;
-  width: 100%;
+  width: 70%;
+  min-width: 250px;
+  max-width: 500px;
   height: 40px;
   padding-right: 15px;
 `;
@@ -64,7 +67,7 @@ export const SearchButton = styled.div`
   justify-content: center;
   align-items: center;
   gap: 3px;
-  padding: 5px 15px;
+  padding: 10px 15px;
   border: none;
   border-radius: 20px;
   background: #ff6700;
@@ -83,8 +86,8 @@ export const SearchButton = styled.div`
 
 export const SearchInputButtonWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 0 10px;
 `;
 
 export const SearchIcon = styled(AiOutlineSearch)`
