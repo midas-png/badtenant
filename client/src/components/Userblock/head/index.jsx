@@ -9,7 +9,7 @@ import {
 
 export const UserblockHead = ({ userImage, userName }) => {
   const image = userImage
-    ? `http://localhost:5000/${userImage}`
+    ? `http://217.151.229.239:5000/${userImage}`
     : Assets.UserNoImage;
   return (
     <>
