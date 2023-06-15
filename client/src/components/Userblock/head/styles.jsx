@@ -22,6 +22,7 @@ export const UserblockImageWrapper = styled.div`
 export const UserblockImage = styled.img`
   width: 140px;
   height: 140px;
+  border-radius: 70px;
   object-fit: cover;
 `;
 
