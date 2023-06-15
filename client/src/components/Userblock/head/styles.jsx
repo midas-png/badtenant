@@ -20,8 +20,9 @@ export const UserblockImageWrapper = styled.div`
 `;
 
 export const UserblockImage = styled.img`
-  width: 50%;
-  height: 100%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
 `;
 
 export const UserblockNameWrapper = styled.div`

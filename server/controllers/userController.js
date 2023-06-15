@@ -6,6 +6,8 @@ const {
 } = require(".././models/models");
 const ApiError = require("../errorApi/ApiError");
 const { Op } = require("sequelize");
+const uuid = require("uuid");
+const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendEmail/index");
@@ -32,9 +34,10 @@ class UserController {
                 password,
                 location,
                 description,
-                img,
                 role,
             } = req.body;
+            const { img } = req.files;
+
             if (
                 !first_name ||
                 !last_name ||
@@ -54,12 +57,15 @@ class UserController {
                 return next(ApiError.badRequest("Already in use"));
             }
 
+            let imageName = "";
             if (img) {
-                img = "";
+                let fileName = uuid.v4() + ".jpg";
+                img.mv(path.resolve(__dirname, "..", "static", fileName));
+                imageName = fileName;
             }
 
             const hashPassword = await bcrypt.hash(password, 5);
-            const user = await User.create({
+            await User.create({
                 title: first_name + " " + last_name,
                 first_name: first_name,
                 last_name: last_name,
@@ -67,7 +73,7 @@ class UserController {
                 password: hashPassword,
                 location: location,
                 description: description,
-                img: img,
+                img: imageName,
                 role: role,
             });
 
@@ -78,7 +84,7 @@ class UserController {
             // const message = `http://217.151.229.239/api/user/verify/${user.id}/${userToken.token}`;
             // await sendMail(user.email, "Confirm Email", message);
 
-            return res.json({message: 'User was created'});
+            return res.json({ message: "User was created" });
         } catch (e) {
             return next(ApiError.internal(e));
         }
@@ -100,7 +106,9 @@ class UserController {
 
             let comparePassword = bcrypt.compareSync(password, user.password);
             if (!comparePassword) {
-                return next(ApiError.badRequest("Invalid login or/-and password"));
+                return next(
+                    ApiError.badRequest("Invalid login or/-and password")
+                );
             }
             const token = generateJwt(user.id, user.email, user.role);
             return res.json({ token });
@@ -206,9 +214,9 @@ class UserController {
                 },
                 { where: { id: userId } }
             );
-            return res.json({message: 'Password successfully changed'})
+            return res.json({ message: "Password successfully changed" });
         } catch (error) {
-            next(ApiError.internal(error))
+            next(ApiError.internal(error));
         }
     }
 

@@ -305,6 +305,7 @@ const SearchComponent = observer(() => {
                       key={ad.id}
                       linkTo={ad.id}
                       userName={ad.title}
+                      userImage={ad.img}
                       userLocation={ad.location}
                       userRate={getRating(ad.id)}
                       totalComments={ad.comments.length}

@@ -8,10 +8,13 @@ import {
 } from './styles';
 
 export const UserblockHead = ({ userImage, userName }) => {
+  const image = userImage
+    ? `http://localhost:5000/${userImage}`
+    : Assets.UserNoImage;
   return (
     <>
       <UserblockImageWrapper>
-        <UserblockImage src={!userImage ? Assets.UserNoImage : userImage} />
+        <UserblockImage src={image} />
       </UserblockImageWrapper>
       <UserblockNameWrapper>
         <UserblockName>{userName}</UserblockName>
