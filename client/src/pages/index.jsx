@@ -11,4 +11,5 @@ export { Signin } from './Signin';
 export { Signup } from './Signup';
 export { Subscription } from './Subscription';
 export { Terms } from './Terms';
+export { Contacts } from './Contacts';
 export { AppRouter } from './AppRouter';

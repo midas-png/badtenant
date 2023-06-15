@@ -11,6 +11,7 @@ import {
   Signup,
   Subscription,
   Terms,
+  Contacts,
 } from './index';
 import {
   ABOUT_ROUTE,
@@ -43,6 +44,7 @@ export const AppRouter = () => {
       </Route>
       <Route path={MAIN_ROUTE} element={<Home />} />
       <Route path={ABOUT_ROUTE} element={<About />} />
+      <Route path="/contacts" element={<Contacts />} />
       <Route path={ACCOUNT_ROUTE} element={<Account />} />
       <Route path={ADVERTISEMENT_ROUTE + '/:id'} element={<Advertisement />} />
       <Route path={SEARCH_ROUTE} element={<Search />} />

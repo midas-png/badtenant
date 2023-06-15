@@ -6,7 +6,7 @@ export const Container = styled.footer`
 `;
 
 export const Wrapper = styled.div`
-  padding: 48px 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   jutify-content: center;
@@ -75,7 +75,7 @@ export const SocialMediaWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 1100px;
-  margin: 70px auto 0 auto;
+  margin: 30px auto 0 auto;
   flex-direction: column;
 `;
 
