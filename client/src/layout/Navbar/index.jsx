@@ -92,7 +92,7 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/contact">Contact Us</NavLink>
+                <NavLink to="/contacts">Contact Us</NavLink>
               </NavItem>
             </NavMenu>
             {!user.isAuth ? (
@@ -117,9 +117,6 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
                     </DropdownItem>
                     <DropdownItem to={`/advertisement/${user.user.id}`}>
                       My Advertisement
-                    </DropdownItem>
-                    <DropdownItem to={'/subscription'}>
-                      Subscription
                     </DropdownItem>
                     <DropdownHR />
                     <DropdownLogOut onClick={() => setModalActive(true)}>
