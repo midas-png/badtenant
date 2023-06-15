@@ -31,12 +31,14 @@ import { FaBars } from 'react-icons/fa';
 import { Context } from '../../index';
 import { Modal } from 'ui';
 import { Assets } from 'assets';
+import { getUserImage } from 'http/userAPI';
 import Cookies from 'js-cookie';
 
 export const Navbar = observer(({ setReverse, setStatic }) => {
   const [scollNav, setScrollNav] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [modalActive, setModalActive] = useState(false);
+  const [userImage, setUserImage] = useState(Assets.UserNoImage);
   const { user } = useContext(Context);
 
   const toggleDropdown = () => {
@@ -60,7 +62,22 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
     user.setUser({});
     user.setIsAuth(false);
     setModalActive(false);
+    setUserImage(Assets.UserNoImage);
   };
+
+  useEffect(() => {
+    if (user.user.id) {
+      getUserImage(user.user.id).then((image) => {
+        console.log(image);
+        if (!image) {
+          setUserImage(Assets.UserNoImage);
+        } else {
+          const imageURL = `http://217.151.229.239:5000/${image}`;
+          setUserImage(imageURL);
+        }
+      });
+    }
+  }, [user.user]);
 
   useEffect(() => {
     window.addEventListener('scroll', changeNavScroll);
@@ -82,14 +99,10 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
             </BurgerIcon>
             <NavMenu>
               <NavItem>
-                <NavLink to="/search">
-                  Catalog
-                </NavLink>
+                <NavLink to="/search">Catalog</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/about">
-                  About
-                </NavLink>
+                <NavLink to="/about">About</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/contacts">Contact Us</NavLink>
@@ -107,14 +120,12 @@ export const Navbar = observer(({ setReverse, setStatic }) => {
             ) : (
               <AccountWrapper>
                 <AccountImage
-                  src={Assets.UserNoImage}
+                  src={userImage}
                   onClick={() => toggleDropdown()}
                 />
                 {dropdown && (
                   <DropdownWrapper>
-                    <DropdownItem to='/account'>
-                      My Account
-                    </DropdownItem>
+                    <DropdownItem to="/account">My Account</DropdownItem>
                     <DropdownItem to={`/advertisement/${user.user.id}`}>
                       My Advertisement
                     </DropdownItem>

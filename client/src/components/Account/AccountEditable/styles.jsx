@@ -40,6 +40,7 @@ export const MainWrapper = styled.div`
 export const ProfilePicture = styled.img`
   height: 300px;
   width: 300px;
+  object-fit: cover;
   background: #fff;
   border-radius: 150px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);

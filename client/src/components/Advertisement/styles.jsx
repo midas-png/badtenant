@@ -20,6 +20,7 @@ export const AdvertisementImage = styled.img`
   background: #fff;
   height: 400px;
   width: 400px;
+  object-fit: cover;
   border-radius: 200px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 

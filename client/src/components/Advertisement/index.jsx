@@ -57,7 +57,7 @@ const StyledItem = styled(PaginationItem)`
 
 const AdvertisementComponent = () => {
   const [modalActive, setModalActive] = useState(false);
-  const [advertisementInfo, setAdvertisementInfo] = useState({ info: [] });
+  const [advertisementInfo, setAdvertisementInfo] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const commentsPerPage = 8;
   const [countPage, setCountPage] = useState(0);
@@ -165,7 +165,13 @@ const AdvertisementComponent = () => {
     <>
       <ToastContainer />
       <AdvertisementWrapper>
-        <AdvertisementImage src={Assets.UserNoImage} />
+        <AdvertisementImage
+          src={
+            advertisementInfo?.img
+              ? `http://217.151.229.239:5000/${advertisementInfo.img}`
+              : Assets.UserNoImage
+          }
+        />
         <NavigationWrapper onClick={() => navigate(-1)}>
           <GrFormPrevious />
         </NavigationWrapper>

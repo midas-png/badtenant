@@ -412,7 +412,25 @@ class UserController {
             const totalNumber = await User.count();
             return res.json(totalNumber);
         } catch (e) {
-            next(ApiError.badRequest(e.message));
+            return next(ApiError.badRequest(e));
+        }
+    }
+
+    async getUserImage(req, res, next) {
+        const { id } = req.params;
+
+        if (!id) {
+            return next(ApiError.badRequest("No ID was passed"));
+        }
+
+        try {
+            const user = await User.findOne({
+                where: { id },
+            });
+
+            return res.json(user.img);
+        } catch (e) {
+            return next(ApiError.internal(e));
         }
     }
 

@@ -1,6 +1,7 @@
 import { $authHost, $host } from './index';
 import jwt_decode from 'jwt-decode';
 import Cookies from 'js-cookie';
+import axios from 'axios';
 
 export const signup = async (
   first_name,
@@ -123,5 +124,12 @@ export const resetUserPassword = async (userId, password) => {
     userId,
     password,
   });
+  return data;
+};
+
+export const getUserImage = async (userId) => {
+  const { data } = await axios.get(
+    `http://217.151.229.239:5000/api/user/user_image/${userId}`,
+  );
   return data;
 };

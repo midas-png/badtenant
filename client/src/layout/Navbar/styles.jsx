@@ -140,6 +140,8 @@ export const AccountWrapper = styled.div`
 export const AccountImage = styled.img`
   width: 50px;
   height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
   cursor: pointer;
 `;
 

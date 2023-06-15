@@ -77,21 +77,6 @@ const AccountEditable = () => {
     });
   }, []);
 
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
-
   return (
     <AccountWrapper>
       <ToastContainer />
@@ -102,10 +87,10 @@ const AccountEditable = () => {
           <ProfilePicture
             src={
               userInfo.img
-                ? `${convertBase64(new Blob([userInfo.img]))}`
+                ? `http://217.151.229.239:5000/${userInfo.img}`
                 : Assets.UserNoImage
             }
-            alt={'ProfileUser'}
+            alt='ProfileUser'
           />
           <EditableWrapper>
             <FormInput>
