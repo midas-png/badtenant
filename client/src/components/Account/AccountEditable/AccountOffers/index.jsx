@@ -18,7 +18,6 @@ import { Context } from '../../../../index';
 import { fetchUserOffers, updateStatus } from '../../../../http/offersAPI';
 import { getAdvertisement } from '../../../../http/advertisementAPI';
 import { createDeal } from '../../../../http/agreementAPI';
-import { useParams } from 'react-router-dom';
 import { Temporal } from '@js-temporal/polyfill';
 
 const AccountOffersSection = () => {
@@ -26,12 +25,11 @@ const AccountOffersSection = () => {
   const [sentOffersData, setSentOffersData] = useState([]);
   const [incomingOffers, setIncomingOffers] = useState([]);
   const [incomingOffersData, setIncomingOffersData] = useState([]);
-  const { id } = useParams();
   const { user } = useContext(Context);
 
   useEffect(() => {
     const today = Temporal.Now.plainDateTimeISO();
-    fetchUserOffers(id)
+    fetchUserOffers(user.user.id)
       .then((data) => {
         data.forEach((offer) => {
           if (offer.status != 1) {
@@ -41,7 +39,7 @@ const AccountOffersSection = () => {
             updateStatus(offer.id, 4).catch((error) => console.error(error));
             return;
           }
-          if (offer.to_id == id) {
+          if (offer.to_id == user.user.id) {
             setIncomingOffers((incomingOffers) => [...incomingOffers, offer]);
             getAdvertisement(offer.from_id).then((data) =>
               setIncomingOffersData((incomingOffersData) => [
@@ -49,7 +47,7 @@ const AccountOffersSection = () => {
                 data,
               ]),
             );
-          } else if (offer.from_id == id) {
+          } else if (offer.from_id == user.user.id) {
             setSentOffers((sentOffers) => [...sentOffers, offer]);
             getAdvertisement(offer.to_id).then((data) =>
               setSentOffersData((sentOffersData) => [...sentOffersData, data]),
@@ -58,7 +56,7 @@ const AccountOffersSection = () => {
         });
       })
       .catch((error) => console.error(error));
-  }, [id]);
+  }, [user.user.id]);
 
   const handleCancel = (id, toID, newStatus) => {
     updateStatus(id, newStatus)

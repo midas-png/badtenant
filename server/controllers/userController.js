@@ -242,18 +242,18 @@ class UserController {
         const { id } = req.params;
 
         if (!id) {
-            next(ApiError.badRequest("No ID was passed"));
+            return next(ApiError.badRequest("No ID was passed"));
         }
 
         try {
-            const user = await User.findOne({
+            let user = await User.findOne({
                 where: { id },
                 include: [{ model: Comment, as: "comments" }],
-            });
+            })
 
             return res.json(user);
         } catch (e) {
-            next(ApiError.badRequest(e.message));
+            return next(ApiError.badRequest(e.message));
         }
     }
 

@@ -32,10 +32,8 @@ export const OffersDataWrapper = styled.div`
 
 export const SentDealsWrapper = styled.div`
   margin: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 350px);
-  grid-template-rows: repeat(auto-fit, 150px);
-  align-items: self-start;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 `;
 
@@ -49,6 +47,8 @@ export const OfferWrapper = styled.div`
   justify-content: space-around;
   background: #fff;
   height: 100px;
+  width: 350px;
+  min-width: 300px;
   border-radius: 30px;
   cursor: pointer;
 `;
