@@ -134,7 +134,11 @@ const AccountDeals = observer(() => {
                     {user.user.role === 'TENANT' ? (
                       <>
                         <InfoImage
-                          src={deal.img === '' ? Assets.UserNoImage : deal.img}
+                          src={
+                            deal.img === ''
+                              ? Assets.UserNoImage
+                              : 'http://217.151.229.239:5000/' + deal.img
+                          }
                         />
                         <ContactWrapper>
                           <InfoName to={`/advertisement/${deal.id_landlord}`}>
@@ -165,7 +169,11 @@ const AccountDeals = observer(() => {
                     ) : (
                       <>
                         <InfoImage
-                          src={deal.img === '' ? Assets.UserNoImage : deal.img}
+                          src={
+                            deal.img === ''
+                              ? Assets.UserNoImage
+                              : 'http://217.151.229.239:5000/' + deal.img
+                          }
                         />
                         <ContactWrapper>
                           <InfoName to={`/advertisement/${deal.id_tenant}`}>

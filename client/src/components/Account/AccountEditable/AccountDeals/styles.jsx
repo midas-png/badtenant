@@ -50,6 +50,7 @@ export const InfoWrapper = styled.div`
 export const InfoImage = styled.img`
   height: 100px;
   width: 100px;
+  object-fit: cover;
   border-radius: 50px;
   background: #c0c0c0;
 `;

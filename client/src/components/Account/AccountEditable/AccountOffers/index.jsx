@@ -19,6 +19,7 @@ import { fetchUserOffers, updateStatus } from '../../../../http/offersAPI';
 import { getAdvertisement } from '../../../../http/advertisementAPI';
 import { createDeal } from '../../../../http/agreementAPI';
 import { Temporal } from '@js-temporal/polyfill';
+import { Assets } from 'assets';
 
 const AccountOffersSection = () => {
   const [sentOffers, setSentOffers] = useState([]);
@@ -136,7 +137,13 @@ const AccountOffersSection = () => {
               })
               .map((offerValue) => (
                 <OfferWrapper key={offerValue.id}>
-                  <OfferImage />
+                  <OfferImage
+                    src={
+                      offerValue.img
+                        ? 'http://217.151.229.239:5000/' + offerValue.img
+                        : Assets.UserNoImage
+                    }
+                  />
                   <OfferDataWrapper>
                     <h4>
                       {
@@ -175,55 +182,60 @@ const AccountOffersSection = () => {
                   return offerValue;
                 }
               })
-              .map((offerValue) => (
-                <OfferWrapper key={offerValue.id}>
-                  <OfferImage />
-                  <OfferDataWrapper>
-                    <h4>
-                      {
-                        incomingOffersData.find(
-                          (value) => value.id == offerValue.from_id,
-                        )?.title
-                      }
-                    </h4>
-                    <span>
-                      {offerValue.date_from} - {offerValue.date_to}
-                    </span>
-                    <OfferButtonsWrapper>
-                      <OfferButton
-                        onClick={() =>
-                          handleDecline(offerValue.id, offerValue.from_id, 2)
-                        }>
-                        Decline
-                      </OfferButton>
-                      <OfferButton
-                        primary="true"
-                        onClick={() =>
-                          handleAccept.apply(
-                            this,
-                            user.user.role == 'TENANT'
-                              ? [
-                                offerValue.id,
-                                user.user.id,
-                                offerValue.from_id,
-                                offerValue.date_from,
-                                offerValue.date_to,
-                              ]
-                              : [
-                                offerValue.id,
-                                offerValue.from_id,
-                                user.user.id,
-                                offerValue.date_from,
-                                offerValue.date_to,
-                              ],
-                          )
-                        }>
-                        Accept
-                      </OfferButton>
-                    </OfferButtonsWrapper>
-                  </OfferDataWrapper>
-                </OfferWrapper>
-              ))}
+              .map((offerValue) => {
+                const offerImage = offerValue.img
+                  ? 'http://217.151.229.239:5000/' + offerValue.img
+                  : Assets.UserNoImage;
+                return (
+                  <OfferWrapper key={offerValue.id}>
+                    <OfferImage src={offerImage} />
+                    <OfferDataWrapper>
+                      <h4>
+                        {
+                          incomingOffersData.find(
+                            (value) => value.id == offerValue.from_id,
+                          )?.title
+                        }
+                      </h4>
+                      <span>
+                        {offerValue.date_from} - {offerValue.date_to}
+                      </span>
+                      <OfferButtonsWrapper>
+                        <OfferButton
+                          onClick={() =>
+                            handleDecline(offerValue.id, offerValue.from_id, 2)
+                          }>
+                          Decline
+                        </OfferButton>
+                        <OfferButton
+                          primary="true"
+                          onClick={() =>
+                            handleAccept.apply(
+                              this,
+                              user.user.role == 'TENANT'
+                                ? [
+                                  offerValue.id,
+                                  user.user.id,
+                                  offerValue.from_id,
+                                  offerValue.date_from,
+                                  offerValue.date_to,
+                                ]
+                                : [
+                                  offerValue.id,
+                                  offerValue.from_id,
+                                  user.user.id,
+                                  offerValue.date_from,
+                                  offerValue.date_to,
+                                ],
+                            )
+                          }>
+                          Accept
+                        </OfferButton>
+                      </OfferButtonsWrapper>
+                    </OfferDataWrapper>
+                  </OfferWrapper>
+                );
+              })}
           </SentDealsWrapper>
         </OffersDataWrapper>
       ) : (
