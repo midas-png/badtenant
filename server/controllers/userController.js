@@ -249,9 +249,31 @@ class UserController {
             let user = await User.findOne({
                 where: { id },
                 include: [{ model: Comment, as: "comments" }],
-            })
+            });
+            const senderIds = user.comments.map((comment) => {
+                return comment.dataValues.from_id;
+            });
+            const users = await Promise.all(
+                senderIds.map(async (id) => {
+                    return await User.findOne({
+                        where: { id },
+                    });
+                })
+            );
 
-            return res.json(user);
+            let userNames = {};
+            let userImages = {};
+            users.forEach((user) => {
+                userNames[user.dataValues.id] = user.dataValues.title;
+                userImages[user.dataValues.id] = user.dataValues.img;
+            });
+
+            user.comments.forEach((comment) => {
+                comment.dataValues.name = userNames[comment.dataValues.from_id];
+                comment.dataValues.img = userImages[comment.dataValues.from_id];
+            });
+
+            return res.send(user);
         } catch (e) {
             return next(ApiError.badRequest(e.message));
         }
@@ -261,7 +283,7 @@ class UserController {
         const { id } = req.params;
 
         if (!id) {
-            next(ApiError.badRequest("No ID was passed"));
+            return next(ApiError.badRequest("No ID was passed"));
         }
 
         try {
@@ -271,7 +293,7 @@ class UserController {
 
             return res.json(user.img);
         } catch (e) {
-            next(ApiError.badRequest(e));
+            return next(ApiError.badRequest(e));
         }
     }
 
