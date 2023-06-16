@@ -37,6 +37,7 @@ const FormSignup = ({ submitForm, setIsValid }) => {
     signupProgress,
     setSignupProgress,
     image,
+    profilePicture,
     role,
     values,
     handleSubmit,
@@ -59,7 +60,7 @@ const FormSignup = ({ submitForm, setIsValid }) => {
         values.password,
         values.state + ' ' + values.city,
         values.description,
-        image,
+        profilePicture,
         role,
       )
         .then(() => {

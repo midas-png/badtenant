@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useForm = (callback, validate) => {
   const [image, setImage] = useState('');
+  const [profilePicture, setProfilePicture] = useState();
   const [role, setRole] = useState('TENANT');
   const [values, setValues] = useState({
     firstName: '',
@@ -35,6 +36,7 @@ const useForm = (callback, validate) => {
     e.preventDefault();
     const file = e.target.files[0];
     if (file !== undefined) {
+      setProfilePicture(e.target.files[0]);
       setImage(URL.createObjectURL(file));
     }
   };
@@ -58,6 +60,7 @@ const useForm = (callback, validate) => {
     signupProgress,
     setSignupProgress,
     image,
+    profilePicture,
     role,
     values,
     handleSubmit,

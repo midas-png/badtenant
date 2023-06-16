@@ -13,15 +13,19 @@ export const signup = async (
   img,
   role,
 ) => {
-  const { data } = await $host.post('api/user/signup', {
-    first_name,
-    last_name,
-    email,
-    password,
-    location,
-    description,
-    img,
-    role,
+  const formData = new FormData();
+  formData.append('first_name', first_name);
+  formData.append('last_name', last_name);
+  formData.append('email', email);
+  formData.append('password', password);
+  formData.append('location', location);
+  formData.append('description', description);
+  formData.append('role', role);
+  formData.append('img', img);
+  const { data } = await $host.post('api/user/signup', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
   });
   return data;
 };
