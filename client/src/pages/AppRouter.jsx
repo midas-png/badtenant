@@ -3,7 +3,6 @@ import {
   Account,
   Advertisement,
   Home,
-  Privacy,
   ResetEmail,
   ResetPassword,
   Search,
@@ -19,7 +18,6 @@ import {
   SIGNUP_ROUTE,
   SEARCH_ROUTE,
   SUBSCRIPTION_ROUTE,
-  PRIVACY_ROUTE,
   TERMS_ROUTE,
   ADVERTISEMENT_ROUTE,
   ACCOUNT_ROUTE,
@@ -50,7 +48,6 @@ export const AppRouter = () => {
       <Route path={SEARCH_ROUTE} element={<Search />} />
       <Route path={SUBSCRIPTION_ROUTE} element={<Subscription />} />
       <Route path={TERMS_ROUTE} element={<Terms />} />
-      <Route path={PRIVACY_ROUTE} element={<Privacy />} />
     </Routes>
   );
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const AboutWrapper = styled.div`
   display: flex;
@@ -57,3 +58,6 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
 `;
 
+export const ParagraphLink = styled(Link)`
+  color: #ff6700;
+`;
