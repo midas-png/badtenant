@@ -44,8 +44,8 @@ import { styled } from '@mui/material/styles';
 import { Temporal } from '@js-temporal/polyfill';
 import { createOffer } from 'http/offersAPI';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Assets } from 'assets';
+import 'react-toastify/dist/ReactToastify.css';
 
 const StyledItem = styled(PaginationItem)`
   color: #000;
@@ -213,17 +213,25 @@ const AdvertisementComponent = () => {
                     return comment;
                   }
                 })
-                .map((comment) => (
-                  <CommentWrapper key={comment.id}>
-                    <Link to={'/advertisement/' + comment.from_id}>
-                      <CommentImage src={Assets.UserNoImage} />
-                    </Link>
-                    <CommentContent>
-                      <Rating rate={comment.rate} />
-                      <CommentUnit>{comment.text}</CommentUnit>
-                    </CommentContent>
-                  </CommentWrapper>
-                ))}
+                .map((comment) => {
+                  const userImage = comment.img
+                    ? 'http://217.151.229.239:5000/' + comment.img
+                    : Assets.UserNoImage;
+                  return (
+                    <CommentWrapper key={comment.id}>
+                      <Link to={'/advertisement/' + comment.from_id}>
+                        <CommentImage src={userImage} />
+                      </Link>
+                      <CommentContent>
+                        <Link to={'/advertisement/' + comment.from_id}>
+                          <span>{comment.name}</span>
+                        </Link>
+                        <Rating rate={comment.rate} />
+                        <CommentUnit>{comment.text}</CommentUnit>
+                      </CommentContent>
+                    </CommentWrapper>
+                  );
+                })}
               {advertisementInfo.comments?.length === 0 && (
                 <span style={{ padding: '30px' }}>
                   No reviews yet. Send a deal first!

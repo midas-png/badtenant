@@ -74,6 +74,11 @@ export const CommentContent = styled.div`
   gap: 10px;
   margin: 30px;
   flex-direction: column;
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
 `;
 
 export const AdvertisementFunctions = styled.div`
