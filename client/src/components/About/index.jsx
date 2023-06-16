@@ -17,33 +17,33 @@ export const About = () => {
           <AboutTitle>About the Project</AboutTitle>
           <ContentWrapper>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              The project is designed to monitor the rating of property owners
+              and tenants, as well as to submit applications for lease
+              agreements. We strive to provide users with a quality service that
+              will allow them to conclude profitable real estate rental deals.
             </Paragraph>
             <SectionWrapper>
-              <H2Title>Lorem ipsum</H2Title>
+              <H2Title>How the rating works</H2Title>
               <Paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                We use the average rating method to evaluate user ratings. This
+                method is based on analyzing the opinions of other users who
+                have rated property owners and tenants. The resulting average
+                rating allows users to quickly determine how comfortable they
+                will be working with a specific property owner or tenant.
+              </Paragraph>
+            </SectionWrapper>
+            <SectionWrapper>
+              <Paragraph>
+                We are constantly working to improve our service and add new
+                features. We strive to create the most comfortable conditions
+                for our users to work in and do everything possible to ensure
+                that each of them is satisfied with the result.
               </Paragraph>
               <Paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                If you have any questions or suggestions for improving our
+                service, please contact us. We are always happy to communicate
+                and ready to help you with any questions. Thank you for choosing
+                our service and we look forward to further cooperation!
               </Paragraph>
             </SectionWrapper>
           </ContentWrapper>
