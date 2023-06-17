@@ -21,7 +21,9 @@ export const signup = async (
   formData.append('location', location);
   formData.append('description', description);
   formData.append('role', role);
-  formData.append('img', img);
+  if (img) {
+    formData.append('img', img);
+  }
   const { data } = await $host.post('api/user/signup', formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
