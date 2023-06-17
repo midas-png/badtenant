@@ -155,22 +155,25 @@ const FormSignup = ({ submitForm, setIsValid }) => {
           </>
         ) : signupProgress == 2 ? (
           <>
-            <ImageUploadWrapper>
-              <ImageInput
-                id="img"
-                name="img"
-                accept="image/jpeg, image/jpg"
-                onChange={handleImageChange}
-              />
-              <ImageUploadLabel htmlFor="img" userImage={image}>
-                {!image && (
-                  <>
-                    <AddPictureIcon />
-                    <span>Add a Picture</span>
-                  </>
-                )}
-              </ImageUploadLabel>
-            </ImageUploadWrapper>
+            <FormInputs>
+              <ImageUploadWrapper>
+                <ImageInput
+                  id="img"
+                  name="img"
+                  accept="image/jpeg, image/jpg"
+                  onChange={handleImageChange}
+                />
+                <ImageUploadLabel htmlFor="img" userImage={image}>
+                  {!image && (
+                    <>
+                      <AddPictureIcon />
+                      <span>Add a Picture</span>
+                    </>
+                  )}
+                </ImageUploadLabel>
+              </ImageUploadWrapper>
+              {errors.picture && <ErrorText>{errors.picture}</ErrorText>}
+            </FormInputs>
             <FormInputs>
               <FormLabel htmlFor="state">Enter your country</FormLabel>
               <FormInput

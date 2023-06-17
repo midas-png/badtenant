@@ -43,7 +43,7 @@ const useForm = (callback, validate) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors(validate(values, signupProgress));
+    setErrors(validate(values, signupProgress, profilePicture));
     setIsSubmitting(true);
   };
 

@@ -1,4 +1,4 @@
-export default function validateInfo(values, signupProgress) {
+export default function validateInfo(values, signupProgress, profilePicture) {
   const errors = {};
 
   if (!values.firstName.trim() || !values.lastName.trim()) {
@@ -38,6 +38,9 @@ export default function validateInfo(values, signupProgress) {
   }
 
   if (signupProgress === 2) {
+    if (!profilePicture) {
+      errors.picture = 'Picture is reqired';
+    }
     if (!values.state) {
       errors.state = 'State is required';
     }
