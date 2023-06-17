@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  FormContentRight,
-  FormSuccessElement,
-} from './styles';
+import { FormContentRight, FormSuccessElement } from './styles';
 import { Assets } from 'assets';
 
 function FormSuccess() {
@@ -11,16 +8,13 @@ function FormSuccess() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate(-1);
-    }, 4000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <FormContentRight>
-      <FormSuccessElement>
-        Nice to meet you! Please, check your email address to confirm your
-        account.
-      </FormSuccessElement>
+      <FormSuccessElement>Nice to meet you!</FormSuccessElement>
       <Assets.SvgAsset3 />
     </FormContentRight>
   );

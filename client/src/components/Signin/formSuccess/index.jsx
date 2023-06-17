@@ -8,14 +8,14 @@ function SuccessSignin() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate(-1);
-    }, 4000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <RightContentWrapper>
       <FormSuccessWrapper>
-        Welcome back! Glad to see you again
+        Glad to see you again!
       </FormSuccessWrapper>
       <Assets.Welcome />
     </RightContentWrapper>
