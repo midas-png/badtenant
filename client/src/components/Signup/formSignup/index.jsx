@@ -45,7 +45,9 @@ const FormSignup = ({ submitForm, setIsValid }) => {
   } = useForm(submitForm, validate);
 
   const handleNext = (value) => {
-    if (Object.keys(validate(values, signupProgress)).length === 0) {
+    if (
+      Object.keys(validate(values, signupProgress, profilePicture)).length === 0
+    ) {
       setSignupProgress(value);
     }
   };

@@ -18,6 +18,7 @@ router.get('/reset_password/:userId/:resetToken', userController.resetTokenVerif
 router.get('/user_image/:id', userController.getUserImage)
 router.post('/reset_password', userController.resetPassword)
 router.post('/reset_user_password', userController.resetUserPassword)
+router.delete("/ban/:id", userController.banOne);
 router.patch('/update/:id', userController.update)
 router.patch('/update_rating', userController.updateUserRating)
 router.patch('/update_password/:id', userController.updatePassword)
