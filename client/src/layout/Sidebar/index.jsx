@@ -49,7 +49,7 @@ export const Sidebar = ({ isOpen, setReverse }) => {
           <SidebarLink to="/about" onClick={setReverse}>
             About
           </SidebarLink>
-          <SidebarLink to="/contact" onClick={setReverse}>
+          <SidebarLink to="/contacts" onClick={setReverse}>
             Contacts
           </SidebarLink>
         </SidebarMenu>
